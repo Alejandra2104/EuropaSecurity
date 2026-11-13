@@ -764,6 +764,15 @@ main {
   border: 1px solid #fed7aa;
 }
 
+.modal-note {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: #1e3a5f;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
 .sources-list {
   display: flex;
   flex-direction: column;

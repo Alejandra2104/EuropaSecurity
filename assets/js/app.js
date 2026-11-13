@@ -50,6 +50,15 @@ const shortDateFormatter = new Intl.DateTimeFormat('es-ES', {
   minute: '2-digit'
 });
 
+const dateOnlyFormatter = new Intl.DateTimeFormat('es-ES', {
+  dateStyle: 'long'
+});
+
+const shortDateOnlyFormatter = new Intl.DateTimeFormat('es-ES', {
+  day: '2-digit',
+  month: 'short'
+});
+
 const updatedFormatter = new Intl.DateTimeFormat('es-ES', {
   dateStyle: 'medium',
   timeStyle: 'short'
@@ -76,14 +85,20 @@ function escapeHtml(value) {
   });
 }
 
-function formatDateTime(value) {
+function formatDateTime(value, precision = 'exact') {
   const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? 'Fecha no disponible' : dateTimeFormatter.format(date);
+  if (Number.isNaN(date.getTime())) return 'Fecha no disponible';
+  if (precision === 'day') return dateOnlyFormatter.format(date);
+  const formatted = dateTimeFormatter.format(date);
+  return precision === 'approximate' ? `${formatted} (hora aproximada)` : formatted;
 }
 
-function formatShortDate(value) {
+function formatShortDate(value, precision = 'exact') {
   const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? 'Fecha no disponible' : shortDateFormatter.format(date);
+  if (Number.isNaN(date.getTime())) return 'Fecha no disponible';
+  if (precision === 'day') return shortDateOnlyFormatter.format(date);
+  const formatted = shortDateFormatter.format(date);
+  return precision === 'approximate' ? `~${formatted}` : formatted;
 }
 
 function normalizeIncident(raw) {
@@ -99,6 +114,10 @@ function normalizeIncident(raw) {
     ? source.url
     : '';
 
+  const timePrecision = ['exact', 'approximate', 'day'].includes(raw.time_precision)
+    ? raw.time_precision
+    : 'exact';
+
   return {
     id: String(raw.id || `${raw.country || 'xx'}-${lat}-${lon}`),
     country: String(raw.country || '').toUpperCase(),
@@ -109,6 +128,7 @@ function normalizeIncident(raw) {
     lon,
     category: CATEGORIES[raw.category] ? raw.category : 'other',
     datetime: raw.datetime,
+    time_precision: timePrecision,
     date: Number.isNaN(date.getTime()) ? null : date,
     status: STATUSES[raw.status] ? raw.status : 'investigating',
     summary: String(raw.summary || ''),
@@ -295,7 +315,7 @@ function popupHtml(incident) {
       </p>
       <p class="popup-date">
         <i class="fa-regular fa-clock" aria-hidden="true"></i>
-        ${escapeHtml(formatDateTime(incident.datetime))}
+        ${escapeHtml(formatDateTime(incident.datetime, incident.time_precision))}
       </p>
       <p class="popup-summary">${escapeHtml(incident.summary)}</p>
       <div class="popup-badges">
@@ -416,7 +436,7 @@ function renderList(incidents) {
             <span class="badge ${status.className}">${escapeHtml(status.label)}</span>
           </span>
           <span class="card-place">${escapeHtml(incident.place)}</span>
-          <span class="card-meta">${escapeHtml(formatShortDate(incident.datetime))} · ${escapeHtml(incident.country_name || incident.country)}</span>
+          <span class="card-meta">${escapeHtml(formatShortDate(incident.datetime, incident.time_precision))} · ${escapeHtml(incident.country_name || incident.country)}</span>
         </span>
       </button>`;
   }).join('');

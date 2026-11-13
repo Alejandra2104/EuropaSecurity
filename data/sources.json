@@ -44,7 +44,9 @@
       "sources": [
         { "name": "Home Office — News", "url": "https://www.gov.uk/government/organisations/home-office", "scope": "Ministerio del Interior" },
         { "name": "Police.uk", "url": "https://www.police.uk/", "scope": "Policía de Inglaterra y Gales" },
-        { "name": "Metropolitan Police — News", "url": "https://news.met.police.uk/", "scope": "Policía Metropolitana de Londres" }
+        { "name": "Metropolitan Police — News", "url": "https://news.met.police.uk/", "scope": "Policía Metropolitana de Londres" },
+        { "name": "Police Scotland", "url": "https://www.scotland.police.uk/what-s-happening/news/", "scope": "Policía de Escocia" },
+        { "name": "Counter Terrorism Policing", "url": "https://www.counterterrorism.police.uk/", "scope": "Policía antiterrorista" }
       ]
     },
     {
@@ -60,7 +62,8 @@
       "name": "Países Bajos",
       "sources": [
         { "name": "Ministerie van Justitie en Veiligheid", "url": "https://www.rijksoverheid.nl/ministeries/ministerie-van-justitie-en-veiligheid", "scope": "Ministerio de Justicia y Seguridad" },
-        { "name": "Politie — Nieuws", "url": "https://www.politie.nl/nieuws", "scope": "Policía Nacional" }
+        { "name": "Politie — Nieuws", "url": "https://www.politie.nl/nieuws", "scope": "Policía Nacional" },
+        { "name": "Koninklijke Marechaussee", "url": "https://www.marechaussee.nl/actueel/nieuws", "scope": "Policía militar" }
       ]
     },
     {
@@ -85,7 +88,8 @@
       "name": "Polonia",
       "sources": [
         { "name": "MSWiA", "url": "https://www.gov.pl/web/mswia", "scope": "Ministerio del Interior y Administración" },
-        { "name": "Policja — Aktualności", "url": "https://policja.pl/", "scope": "Policía Nacional" }
+        { "name": "Policja — Aktualności", "url": "https://policja.pl/", "scope": "Policía Nacional" },
+        { "name": "Straż Graniczna — Aktualności", "url": "https://www.strazgraniczna.pl/pl/aktualnosci", "scope": "Guardia Fronteriza" }
       ]
     },
     {

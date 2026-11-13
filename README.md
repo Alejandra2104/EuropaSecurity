@@ -2,7 +2,7 @@
 
 Mapa interactivo de **avisos de bomba en Europa**. Cada marcador muestra la localización exacta, la localidad, la fecha y hora, el estado del aviso y un enlace a la **fuente oficial** (policía, ministerio del Interior u organismo público competente).
 
-> **Aviso importante:** el repositorio se publica inicialmente en **modo demo** con avisos ficticios. No son noticias reales. Antes de difundir la web, sustituye los datos de `data/incidents.json` por avisos verificados con fuente oficial.
+Los avisos se contrastan con publicaciones oficiales y se revisan manualmente antes de publicarse. La cobertura es limitada: solo aparecen los casos para los que existe una nota oficial concreta y enlazable.
 
 - Web: https://alejandra2104.github.io/EuropaSecurity/
 - Repositorio: https://github.com/Alejandra2104/EuropaSecurity
@@ -38,22 +38,23 @@ Cada aviso de `data/incidents.json` sigue este esquema:
 
 ```json
 {
-  "id": "es-2026-11-09-madrid-barajas",
-  "country": "ES",
-  "country_name": "España",
-  "locality": "Madrid",
-  "place": "Aeropuerto Adolfo Suárez Madrid-Barajas, Terminal 4",
-  "lat": 40.4917,
-  "lon": -3.5936,
+  "id": "de-2026-10-05-stuttgart-airport",
+  "country": "DE",
+  "country_name": "Alemania",
+  "locality": "Stuttgart",
+  "place": "Aeropuerto de Stuttgart — zona de seguridad",
+  "lat": 48.6899,
+  "lon": 9.2219,
   "category": "airport",
-  "datetime": "2026-11-09T08:15:00+01:00",
-  "status": "evacuated",
-  "summary": "Llamada anónima alertando de una mochila sospechosa. Se evacuó la terminal.",
+  "datetime": "2026-10-05T16:30:00+02:00",
+  "time_precision": "approximate",
+  "status": "hoax",
+  "summary": "Un viajero afirmó en la zona de seguridad que llevaba una bomba en su equipaje. Se interrumpió el vuelo y se desalojó la zona; la inspección no halló indicios de peligro.",
   "verified": true,
   "demo": false,
   "source": {
-    "name": "Policía Nacional — Sala de prensa",
-    "url": "https://www.policia.es/...",
+    "name": "Bundespolizeiinspektion Flughafen Stuttgart — Presseportal",
+    "url": "https://www.presseportal.de/blaulicht/pm/116095/6365383",
     "type": "official"
   }
 }
@@ -70,7 +71,8 @@ Cada aviso de `data/incidents.json` sigue este esquema:
 | `place` | Sí | Lugar exacto (terminal, estación, cuartel…). |
 | `lat`, `lon` | Sí | Coordenadas WGS84 en grados decimales. |
 | `category` | Sí | `airport`, `train`, `police`, `government`, `embassy`, `education`, `shopping` u `other`. |
-| `datetime` | Sí | ISO 8601 con zona horaria (`2026-11-09T08:15:00+01:00`). |
+| `datetime` | Sí | ISO 8601 con zona horaria (`2026-10-05T16:30:00+02:00`). |
+| `time_precision` | No | `exact`, `approximate` o `day`. Si falta, se asume `exact`. |
 | `status` | Sí | `investigating`, `evacuated`, `hoax`, `confirmed` o `cleared`. |
 | `summary` | Sí | Resumen breve y neutral, sin detalles operativos. |
 | `verified` | No | `true` cuando el aviso ha sido contrastado con la fuente oficial. |
@@ -86,6 +88,14 @@ Estados:
 - `hoax`: falsa alarma.
 - `confirmed`: artefacto confirmado (desactivado o detonado de forma controlada).
 - `cleared`: comprobado sin riesgo / servicio normalizado.
+
+Precisión de la fecha y hora:
+
+- `exact`: la fuente oficial indica la hora del suceso.
+- `approximate`: la fuente indica una hora aproximada («hacia las 16:30»); la ficha lo señala como «hora aproximada».
+- `day`: la fuente solo indica el día; el mapa muestra la fecha sin inventar una hora.
+
+El filtro de periodo se aplica por días. Por defecto se muestran los últimos seis meses; selecciona «Todo» para ver los avisos anteriores.
 
 Tipos de lugar e iconos:
 
@@ -107,7 +117,8 @@ Tipos de lugar e iconos:
 - Enlaza la publicación oficial concreta, no la portada del medio.
 - Si no existe publicación oficial, el aviso no debe publicarse.
 - Revisa el enlace antes de hacer commit: las URLs oficiales cambian con frecuencia.
-- Etiqueta siempre las falsas alarmas como `hoax` y los ejemplos como `demo`.
+- Etiqueta siempre las falsas alarmas como `hoax`.
+- No inventes la hora: si la nota solo da el día, usa `time_precision: "day"`.
 
 Los avisos de amenaza de bomba son información sensible: **no publiques detalles operativos** (sistemas de seguridad, puntos de acceso, tiempos de respuesta) ni datos personales.
 
@@ -160,6 +171,7 @@ Así se evita el scraping agresivo, los bulos y las notificaciones falsas.
 ## Limitaciones y aviso legal
 
 - El mapa está **incompleto por diseño**: muchos avisos no se hacen públicos, se retiran o no se confirman.
+- La cobertura depende de que exista una nota oficial concreta. Algunos países publican muy poco o nada sobre estos incidentes.
+- Algunas notas oficiales no indican la hora exacta; en esos casos la ficha lo aclara y no se inventa una hora.
 - No es un servicio de alerta ni de emergencia. Ante cualquier amenaza, llama al **112** o al servicio de emergencias local.
 - La información mostrada no sustituye a las comunicaciones oficiales.
-- Los datos de demostración son ficticios y están etiquetados como tales.
