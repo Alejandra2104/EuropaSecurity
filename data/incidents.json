@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "updated_at": "2026-11-13T09:00:00+01:00",
+    "demo": true,
+    "data_note": "Datos de demostración: los avisos son ficticios y los enlaces apuntan a portales oficiales de prensa, no a notas concretas. Sustituir por avisos verificados antes de publicar."
+  },
+  "incidents": [
+    {
+      "id": "es-2026-11-09-madrid-barajas",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Madrid",
+      "place": "Aeropuerto Adolfo Suárez Madrid-Barajas, Terminal 4",
+      "lat": 40.4917,
+      "lon": -3.5936,
+      "category": "airport",
+      "datetime": "2026-11-09T08:15:00+01:00",
+      "status": "evacuated",
+      "summary": "Llamada anónima alertando de una mochila sospechosa en la zona de facturación. Se evacuó la terminal y se activó el protocolo de seguridad.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Policía Nacional — Sala de prensa",
+        "url": "https://www.policia.es/_es/prensa.php",
+        "type": "official"
+      }
+    },
+    {
+      "id": "es-2026-11-05-barcelona-sants",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Barcelona",
+      "place": "Estación de Barcelona-Sants",
+      "lat": 41.3792,
+      "lon": 2.14,
+      "category": "train",
+      "datetime": "2026-11-05T19:40:00+01:00",
+      "status": "hoax",
+      "summary": "Aviso en un tren de alta velocidad. Los TEDAX revisaron el convoy y no hallaron ningún artefacto.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Policía Nacional — Sala de prensa",
+        "url": "https://www.policia.es/_es/prensa.php",
+        "type": "official"
+      }
+    },
+    {
+      "id": "es-2026-10-28-quart-poblet-cuartel",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Quart de Poblet (Valencia)",
+      "place": "Cuartel de la Guardia Civil de Quart de Poblet",
+      "lat": 39.4819,
+      "lon": -0.4414,
+      "category": "police",
+      "datetime": "2026-10-28T11:05:00+01:00",
+      "status": "investigating",
+      "summary": "Amenaza telefónica contra el acuartelamiento. Se reforzó la seguridad y se acordonó el perímetro mientras se revisaban las instalaciones.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Guardia Civil — Sala de prensa",
+        "url": "https://www.guardiacivil.es/es/prensa/noticias/index.html",
+        "type": "official"
+      }
+    },
+    {
+      "id": "fr-2026-11-07-paris-gare-du-nord",
+      "country": "FR",
+      "country_name": "Francia",
+      "locality": "París",
+      "place": "Gare du Nord",
+      "lat": 48.8809,
+      "lon": 2.3553,
+      "category": "train",
+      "datetime": "2026-11-07T07:50:00+01:00",
+      "status": "cleared",
+      "summary": "Paquete abandonado en el andén. La Police Nationale estableció un perímetro y comprobó que no había riesgo.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Police nationale — Actualités",
+        "url": "https://www.police-nationale.interieur.gouv.fr/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "de-2026-11-02-berlin-hbf",
+      "country": "DE",
+      "country_name": "Alemania",
+      "locality": "Berlín",
+      "place": "Berlin Hauptbahnhof",
+      "lat": 52.5251,
+      "lon": 13.3694,
+      "category": "train",
+      "datetime": "2026-11-02T16:30:00+01:00",
+      "status": "hoax",
+      "summary": "Aviso de bomba en la estación central. La Bundespolizei evacuó dos andenes y descartó la amenaza.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Bundespolizei — Meldungen",
+        "url": "https://www.bundespolizei.de/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "it-2026-10-30-roma-termini",
+      "country": "IT",
+      "country_name": "Italia",
+      "locality": "Roma",
+      "place": "Roma Termini",
+      "lat": 41.901,
+      "lon": 12.5017,
+      "category": "train",
+      "datetime": "2026-10-30T09:20:00+01:00",
+      "status": "evacuated",
+      "summary": "Evacuación preventiva por una amenaza telefónica. La Polizia di Stato revisó la estación durante una hora.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Polizia di Stato — Notizie",
+        "url": "https://www.poliziadistato.it/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "be-2026-11-11-bruxelles-midi",
+      "country": "BE",
+      "country_name": "Bélgica",
+      "locality": "Bruselas",
+      "place": "Bruxelles-Midi",
+      "lat": 50.8358,
+      "lon": 4.3358,
+      "category": "train",
+      "datetime": "2026-11-11T12:10:00+01:00",
+      "status": "investigating",
+      "summary": "Aviso de amenaza en la estación. La Police fédérale acordonó el área y abrió una investigación.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Police fédérale — Actualités",
+        "url": "https://www.police.be/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "gb-2026-11-08-london-heathrow",
+      "country": "GB",
+      "country_name": "Reino Unido",
+      "locality": "Londres",
+      "place": "Aeropuerto de Heathrow, Terminal 5",
+      "lat": 51.4713,
+      "lon": -0.4672,
+      "category": "airport",
+      "datetime": "2026-11-08T14:45:00+00:00",
+      "status": "cleared",
+      "summary": "Objeto sospechoso en la zona de salidas. La Metropolitan Police revisó el área y reabrió la terminal.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Metropolitan Police — News",
+        "url": "https://news.met.police.uk/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "nl-2026-11-04-amsterdam-centraal",
+      "country": "NL",
+      "country_name": "Países Bajos",
+      "locality": "Ámsterdam",
+      "place": "Amsterdam Centraal",
+      "lat": 52.3791,
+      "lon": 4.9003,
+      "category": "train",
+      "datetime": "2026-11-04T18:25:00+01:00",
+      "status": "hoax",
+      "summary": "Amenaza telefónica. La Politie evacuó el vestíbulo principal y confirmó que se trataba de una falsa alarma.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Politie — Nieuws",
+        "url": "https://www.politie.nl/nieuws",
+        "type": "official"
+      }
+    },
+    {
+      "id": "at-2026-10-25-wien-hbf",
+      "country": "AT",
+      "country_name": "Austria",
+      "locality": "Viena",
+      "place": "Wien Hauptbahnhof",
+      "lat": 48.185,
+      "lon": 16.3764,
+      "category": "train",
+      "datetime": "2026-10-25T10:35:00+02:00",
+      "status": "cleared",
+      "summary": "Maleta sin propietario en el vestíbulo. La policía austriaca revisó el equipaje y normalizó el servicio.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Bundesministerium für Inneres — News",
+        "url": "https://www.bmi.gv.at/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "pt-2026-11-01-lisboa-aeroporto",
+      "country": "PT",
+      "country_name": "Portugal",
+      "locality": "Lisboa",
+      "place": "Aeropuerto Humberto Delgado, Terminal 1",
+      "lat": 38.7742,
+      "lon": -9.1342,
+      "category": "airport",
+      "datetime": "2026-11-01T06:55:00+00:00",
+      "status": "evacuated",
+      "summary": "Aviso de bomba en la terminal 1. La PSP evacuó la zona de embarques y activó el protocolo antiterrorista.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "PSP — Notícias",
+        "url": "https://www.psp.pt/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "pl-2026-11-10-warszawa-centralna",
+      "country": "PL",
+      "country_name": "Polonia",
+      "locality": "Varsovia",
+      "place": "Warszawa Centralna",
+      "lat": 52.2286,
+      "lon": 21.003,
+      "category": "train",
+      "datetime": "2026-11-10T13:15:00+01:00",
+      "status": "investigating",
+      "summary": "Amenaza anónima. La Policja acordonó parte de la estación y revisó los accesos.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Policja — Aktualności",
+        "url": "https://policja.pl/",
+        "type": "official"
+      }
+    },
+    {
+      "id": "gr-2026-10-20-athens-airport",
+      "country": "GR",
+      "country_name": "Grecia",
+      "locality": "Atenas",
+      "place": "Aeropuerto Internacional de Atenas",
+      "lat": 37.9364,
+      "lon": 23.9445,
+      "category": "airport",
+      "datetime": "2026-10-20T21:10:00+03:00",
+      "status": "confirmed",
+      "summary": "Hallazgo de un artefacto incendiario de fabricación casera en una zona de servicio. La policía helena lo desactivó de forma controlada.",
+      "verified": false,
+      "demo": true,
+      "source": {
+        "name": "Hellenic Police — News",
+        "url": "https://www.astynomia.gr/",
+        "type": "official"
+      }
+    }
+  ]
+}

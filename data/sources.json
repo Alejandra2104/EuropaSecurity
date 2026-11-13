@@ -1,0 +1,164 @@
+{
+  "updated_at": "2026-11-13",
+  "note": "Catálogo de portales oficiales de interior, policía y protección civil. Los enlaces deben revisarse periódicamente.",
+  "countries": [
+    {
+      "country": "ES",
+      "name": "España",
+      "sources": [
+        { "name": "Ministerio del Interior — Noticias", "url": "https://www.interior.gob.es/opencms/es/prensa/noticias/", "scope": "Ministerio del Interior" },
+        { "name": "Policía Nacional — Sala de prensa", "url": "https://www.policia.es/_es/prensa.php", "scope": "Policía Nacional" },
+        { "name": "Guardia Civil — Noticias", "url": "https://www.guardiacivil.es/es/prensa/noticias/index.html", "scope": "Guardia Civil" }
+      ]
+    },
+    {
+      "country": "FR",
+      "name": "Francia",
+      "sources": [
+        { "name": "Ministère de l'Intérieur — Actualités", "url": "https://www.interieur.gouv.fr/actualites", "scope": "Ministerio del Interior" },
+        { "name": "Police nationale", "url": "https://www.police-nationale.interieur.gouv.fr/", "scope": "Policía Nacional" },
+        { "name": "Gendarmerie nationale", "url": "https://www.gendarmerie.interieur.gouv.fr/", "scope": "Gendarmería" }
+      ]
+    },
+    {
+      "country": "DE",
+      "name": "Alemania",
+      "sources": [
+        { "name": "Bundesministerium des Innern (BMI)", "url": "https://www.bmi.bund.de/DE/Home/home_node.html", "scope": "Ministerio del Interior" },
+        { "name": "Bundespolizei — Meldungen", "url": "https://www.bundespolizei.de/", "scope": "Policía Federal" },
+        { "name": "BKA", "url": "https://www.bka.de/DE/Home/home_node.html", "scope": "Oficina Federal de Investigación Criminal" }
+      ]
+    },
+    {
+      "country": "IT",
+      "name": "Italia",
+      "sources": [
+        { "name": "Ministero dell'Interno — Notizie", "url": "https://www.interno.gov.it/it", "scope": "Ministerio del Interior" },
+        { "name": "Polizia di Stato", "url": "https://www.poliziadistato.it/", "scope": "Policía de Estado" },
+        { "name": "Carabinieri", "url": "https://www.carabinieri.it/", "scope": "Arma de Carabineros" }
+      ]
+    },
+    {
+      "country": "GB",
+      "name": "Reino Unido",
+      "sources": [
+        { "name": "Home Office — News", "url": "https://www.gov.uk/government/organisations/home-office", "scope": "Ministerio del Interior" },
+        { "name": "Police.uk", "url": "https://www.police.uk/", "scope": "Policía de Inglaterra y Gales" },
+        { "name": "Metropolitan Police — News", "url": "https://news.met.police.uk/", "scope": "Policía Metropolitana de Londres" }
+      ]
+    },
+    {
+      "country": "BE",
+      "name": "Bélgica",
+      "sources": [
+        { "name": "SPF Intérieur", "url": "https://www.ibz.be/", "scope": "Servicio Público Federal Interior" },
+        { "name": "Police fédérale", "url": "https://www.police.be/", "scope": "Policía Federal" }
+      ]
+    },
+    {
+      "country": "NL",
+      "name": "Países Bajos",
+      "sources": [
+        { "name": "Ministerie van Justitie en Veiligheid", "url": "https://www.rijksoverheid.nl/ministeries/ministerie-van-justitie-en-veiligheid", "scope": "Ministerio de Justicia y Seguridad" },
+        { "name": "Politie — Nieuws", "url": "https://www.politie.nl/nieuws", "scope": "Policía Nacional" }
+      ]
+    },
+    {
+      "country": "AT",
+      "name": "Austria",
+      "sources": [
+        { "name": "Bundesministerium für Inneres", "url": "https://www.bmi.gv.at/", "scope": "Ministerio del Interior" },
+        { "name": "Polizei", "url": "https://www.polizei.gv.at/", "scope": "Policía Federal" }
+      ]
+    },
+    {
+      "country": "PT",
+      "name": "Portugal",
+      "sources": [
+        { "name": "Ministério da Administração Interna", "url": "https://www.mai.gov.pt/", "scope": "Ministerio de Administración Interna" },
+        { "name": "PSP — Notícias", "url": "https://www.psp.pt/", "scope": "Policía de Seguridad Pública" },
+        { "name": "GNR", "url": "https://www.gnr.pt/", "scope": "Guardia Nacional Republicana" }
+      ]
+    },
+    {
+      "country": "PL",
+      "name": "Polonia",
+      "sources": [
+        { "name": "MSWiA", "url": "https://www.gov.pl/web/mswia", "scope": "Ministerio del Interior y Administración" },
+        { "name": "Policja — Aktualności", "url": "https://policja.pl/", "scope": "Policía Nacional" }
+      ]
+    },
+    {
+      "country": "SE",
+      "name": "Suecia",
+      "sources": [
+        { "name": "Polisen — Aktuellt", "url": "https://polisen.se/aktuellt/", "scope": "Policía Nacional" },
+        { "name": "Justitiedepartementet", "url": "https://www.regeringen.se/sveriges-regering/justitiedepartementet/", "scope": "Ministerio de Justicia" }
+      ]
+    },
+    {
+      "country": "NO",
+      "name": "Noruega",
+      "sources": [
+        { "name": "Politiet — Aktuelt", "url": "https://www.politiet.no/", "scope": "Policía Nacional" },
+        { "name": "Justis- og beredskapsdepartementet", "url": "https://www.regjeringen.no/no/dep/jd/id463/", "scope": "Ministerio de Justicia y Emergencias" }
+      ]
+    },
+    {
+      "country": "DK",
+      "name": "Dinamarca",
+      "sources": [
+        { "name": "Politi — Nyheder", "url": "https://politi.dk/", "scope": "Policía Nacional" },
+        { "name": "Justitsministeriet", "url": "https://www.justitsministeriet.dk/", "scope": "Ministerio de Justicia" }
+      ]
+    },
+    {
+      "country": "FI",
+      "name": "Finlandia",
+      "sources": [
+        { "name": "Poliisi — News", "url": "https://poliisi.fi/", "scope": "Policía Nacional" },
+        { "name": "Sisäministeriö", "url": "https://intermin.fi/", "scope": "Ministerio del Interior" }
+      ]
+    },
+    {
+      "country": "IE",
+      "name": "Irlanda",
+      "sources": [
+        { "name": "An Garda Síochána — News", "url": "https://www.garda.ie/", "scope": "Policía Nacional" },
+        { "name": "Department of Justice", "url": "https://www.gov.ie/en/organisation/department-of-justice/", "scope": "Ministerio de Justicia" }
+      ]
+    },
+    {
+      "country": "CH",
+      "name": "Suiza",
+      "sources": [
+        { "name": "Fedpol", "url": "https://www.fedpol.admin.ch/", "scope": "Oficina Federal de Policía" },
+        { "name": "EJPD", "url": "https://www.ejpd.admin.ch/", "scope": "Departamento Federal de Justicia y Policía" }
+      ]
+    },
+    {
+      "country": "GR",
+      "name": "Grecia",
+      "sources": [
+        { "name": "Hellenic Police — News", "url": "https://www.astynomia.gr/", "scope": "Policía Helénica" },
+        { "name": "Ministry of Citizen Protection", "url": "https://www.mopocp.gov.gr/", "scope": "Ministerio de Protección Ciudadana" }
+      ]
+    },
+    {
+      "country": "CZ",
+      "name": "República Checa",
+      "sources": [
+        { "name": "Policie České republiky", "url": "https://www.policie.cz/", "scope": "Policía Nacional" },
+        { "name": "Ministerstvo vnitra", "url": "https://www.mvcr.cz/", "scope": "Ministerio del Interior" }
+      ]
+    },
+    {
+      "country": "RO",
+      "name": "Rumanía",
+      "sources": [
+        { "name": "Poliția Română", "url": "https://www.politiaromana.ro/", "scope": "Policía Nacional" },
+        { "name": "Ministerul Afacerilor Interne", "url": "https://www.mai.gov.ro/", "scope": "Ministerio del Interior" }
+      ]
+    }
+  ]
+}
