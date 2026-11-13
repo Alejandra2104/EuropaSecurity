@@ -8,7 +8,8 @@
       "sources": [
         { "name": "Ministerio del Interior — Noticias", "url": "https://www.interior.gob.es/opencms/es/prensa/noticias/", "scope": "Ministerio del Interior" },
         { "name": "Policía Nacional — Sala de prensa", "url": "https://www.policia.es/_es/prensa.php", "scope": "Policía Nacional" },
-        { "name": "Guardia Civil — Noticias", "url": "https://www.guardiacivil.es/es/prensa/noticias/index.html", "scope": "Guardia Civil" }
+        { "name": "Guardia Civil — Noticias", "url": "https://www.guardiacivil.es/es/prensa/noticias/index.html", "scope": "Guardia Civil" },
+        { "name": "Principado de Asturias — Actualidad", "url": "https://actualidad.asturias.es/", "scope": "Gobierno del Principado de Asturias" }
       ]
     },
     {

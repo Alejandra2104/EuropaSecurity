@@ -1,10 +1,31 @@
 {
   "meta": {
-    "updated_at": "2026-11-13T22:15:00+01:00",
+    "updated_at": "2026-11-13T22:48:47+01:00",
     "demo": false,
     "data_note": "Avisos reales contrastados con publicaciones oficiales. La exactitud de la hora se indica en el campo time_precision de cada aviso."
   },
   "incidents": [
+    {
+      "id": "es-2026-11-10-oviedo-villafria",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Oviedo",
+      "place": "Edificio de viviendas en el barrio de Villafría",
+      "lat": 43.3531,
+      "lon": -5.8347,
+      "category": "other",
+      "datetime": "2026-11-10T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "confirmed",
+      "summary": "Un tiroteo y una explosión en un edificio de viviendas de Villafría causaron la muerte del subinspector de la Policía Nacional Juan José Rodríguez. El inmueble fue desalojado y los técnicos descartaron daños estructurales.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Gobierno del Principado de Asturias — Actualidad",
+        "url": "https://actualidad.asturias.es/-/villafria11",
+        "type": "official"
+      }
+    },
     {
       "id": "it-2026-11-01-bolzano-airport",
       "country": "IT",
