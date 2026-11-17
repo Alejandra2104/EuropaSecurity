@@ -3,12 +3,28 @@
     "title": "Perfil provisional de la oleada de avisos",
     "updated_at": "2026-11-17T12:00:00+01:00",
     "period": "2026-01-08 a 2026-11-16",
-    "scope": "36 avisos registrados en 12 países: 34 resueltos (31 falsos o descartados y 3 reales) y 2 pendientes.",
+    "scope": "36 avisos registrados en 12 países: 34 resueltos (31 falsos o descartados y 3 reales) y 2 pendientes. 15 avisos tienen algún sujeto identificado, investigado o detenido, siempre sin datos personales.",
     "disclaimer": "Análisis editorial y provisional elaborado con fuentes abiertas. No sustituye a la investigación policial ni atribuye delitos a personas concretas. Los porcentajes se calculan sobre avisos resueltos del conjunto completo y pueden variar al actualizar el mapa.",
     "privacy": "No se incluyen nombres, alias ni datos identificativos de detenidos o sospechosos.",
     "methodology": "Se cruzan notas policiales, comunicados oficiales y prensa. Cada aviso se clasifica como falso, descartado, real o pendiente según el resultado publicado por la fuente."
   },
   "headline": "El patrón dominante es la falsa alarma: 31 de los 34 avisos resueltos (91 %) se descartaron o se declararon falsos. Los tres casos reales —Oviedo, Tallaght y Atenas— no muestran indicios de compartir autor ni modus operandi.",
+  "subject_profile": {
+    "summary": "Solo 15 de los 36 avisos tienen un sujeto identificado, investigado o detenido. La muestra es pequeña y muy desigual: incluye desde autores de amenazas anónimas hasta dueños de maletas olvidadas, pasando por los tres casos con explosivos reales. No hay un perfil único ni pruebas públicas de una red común.",
+    "shared_traits": [
+      "Predominan los hombres y los autores que actúan solos o en grupos pequeños.",
+      "Los métodos documentados se reparten entre llamadas o avisos anónimos y objetos abandonados; no hay un único modus operandi.",
+      "Las motivaciones conocidas son personales (llegar tarde, no perder un vuelo) o extorsivas; no hay una ideología común.",
+      "La mayoría de los casos con sujeto identificado son falsas alarmas; los tres casos reales tienen perfiles y motivaciones distintas."
+    ],
+    "differences": [
+      "Los casos reales usan artefactos verificados; en las falsas alarmas predominan objetos vacíos o inocuos.",
+      "Las detenciones se concentran en falsas alarmas; en Oviedo el sospechoso sigue fugitivo.",
+      "Los grupos identificados (Tallaght, RAF Fairford, Hoogezand y Málaga/Murcia) no comparten método ni motivación.",
+      "No hay prueba pública de que los sujetos identificados formen una red común."
+    ],
+    "caveat": "Comparativa elaborada con información publicada y una muestra pequeña. La ausencia de detención no implica inocencia ni culpabilidad; no se identifican personas."
+  },
   "false_alarm_profile": {
     "summary": "No hay un único perfil criminal que explique toda la oleada. La mayoría de los avisos son amenazas anónimas, con bajo coste técnico y alto impacto mediático, que imitan un mismo repertorio: correos o llamadas, objetos abandonados y objetivos simbólicos. Junto a una posible campaña coordinada conviven imitadores, oportunistas y personas que usan la amenaza para resolver un problema personal, como no perder un tren. La investigación trabaja con varias hipótesis en paralelo y no ha atribuido oficialmente la oleada a un Estado o grupo concreto.",
     "patterns": [

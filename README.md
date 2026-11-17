@@ -2,7 +2,7 @@
 
 Mapa interactivo de **avisos de bomba en Europa**. Cada marcador muestra la localización exacta, la localidad, la fecha y hora, el estado del aviso y las fuentes disponibles: **notas de policía, comunicados oficiales y notas de prensa**.
 
-Los avisos se contrastan con publicaciones policiales, oficiales y de prensa, y se revisan manualmente antes de publicarse. La cobertura es limitada y depende de que exista información pública enlazable. Cada ficha indica el resultado del aviso (falsa alarma, descartado, real o pendiente) y diferencia claramente las falsas alarmas de los casos con explosivos confirmados.
+Los avisos se contrastan con publicaciones policiales, oficiales y de prensa, y se revisan manualmente antes de publicarse. La cobertura es limitada y depende de que exista información pública enlazable. Cada ficha indica el resultado del aviso (falsa alarma, descartado, real o pendiente), diferencia claramente las falsas alarmas de los casos con explosivos confirmados y, cuando hay información pública, describe al sujeto o autor sin nombres ni datos personales. El análisis añade el ratio de falsas frente a reales y el ranking de actividad por país.
 
 - Web: https://alejandra2104.github.io/EuropaSecurity/
 - Repositorio: https://github.com/Alejandra2104/EuropaSecurity
@@ -11,11 +11,12 @@ Los avisos se contrastan con publicaciones policiales, oficiales y de prensa, y 
 
 - Mapa de Europa con Leaflet + OpenStreetMap y agrupación de marcadores.
 - Iconos según el tipo de lugar: aeropuerto, estación de tren, cuartel/comisaría, edificio gubernamental, embajada, centro educativo, centro comercial u otros.
-- Ficha por aviso con localidad, lugar, fecha y hora, estado, resultado, resumen y fuentes (policía, oficiales y prensa).
-- Panel de balance con porcentaje de falsas alarmas frente a casos reales; los pendientes se muestran aparte.
+- Ficha por aviso con localidad, lugar, fecha y hora, estado, resultado, resumen, sujeto/autoría y fuentes (policía, oficiales y prensa).
+- Panel de balance con porcentaje y ratio de falsas alarmas frente a casos reales; los pendientes se muestran aparte.
 - Filtros por país, tipo de lugar, estado, resultado, fuente y periodo (últimos 30/90/180 días, último año o todo).
-- Buscador por localidad, lugar, país o resumen.
+- Buscador por localidad, lugar, país, resumen y datos públicos del sujeto.
 - Modal de análisis con perfil provisional de la autoría, hipótesis, indicadores, casos conocidos y fuentes.
+- Comparativa de sujetos identificados y ranking por país de avisos, pendientes y fuentes de prensa recientes.
 - Catálogo de portales oficiales por país en el apartado «Metodología».
 - Diseño responsive y despliegue automático en GitHub Pages.
 
@@ -29,8 +30,8 @@ Los avisos se contrastan con publicaciones policiales, oficiales y de prensa, y 
 │  ├─ js/app.js
 │  └─ favicon.svg
 ├─ data/
-│  ├─ incidents.json   # avisos, resultados y fuentes
-│  ├─ analysis.json    # perfil provisional, hipótesis y fuentes del análisis
+│  ├─ incidents.json   # avisos, resultados, sujetos y fuentes
+│  ├─ analysis.json    # perfil de sujetos, hipótesis y fuentes del análisis
 │  └─ sources.json     # catálogo de fuentes oficiales por país
 └─ .github/workflows/pages.yml
 ```
@@ -53,6 +54,18 @@ Cada aviso de `data/incidents.json` sigue este esquema:
   "time_precision": "approximate",
   "status": "hoax",
   "summary": "Una llamada anónima alertó de una mochila sospechosa. Se restringieron los accesos y un tren se detuvo en Calatayud; la inspección no halló explosivos. La Policía detuvo después a un hombre que, según la investigación, hizo la llamada porque llegaba tarde a su tren.",
+  "subject": {
+    "status": "detained",
+    "label": "1 hombre detenido",
+    "detained": true,
+    "count": 1,
+    "sex": "male",
+    "age": "—",
+    "group": false,
+    "role": "caller",
+    "method": "Llamada telefónica",
+    "description": "Varón detenido tras la llamada; la investigación atribuye el aviso a un retraso en su tren."
+  },
   "verified": true,
   "demo": false,
   "source": {
@@ -94,6 +107,17 @@ Cada aviso de `data/incidents.json` sigue este esquema:
 | `time_precision` | No | `exact`, `approximate` o `day`. Si falta, se asume `exact`. |
 | `status` | Sí | `investigating`, `evacuated`, `hoax`, `confirmed` o `cleared`. |
 | `summary` | Sí | Resumen breve y neutral, sin detalles operativos. |
+| `subject` | No | Bloque opcional con autoría, papel y estado de detención. Si no hay datos, indícalo con `status: "no_data"` o `"not_applicable"`. |
+| `subject.status` | No | `detained`, `fugitive`, `identified`, `unidentified`, `mixed`, `no_data` o `not_applicable`. |
+| `subject.label` | No | Etiqueta corta y anónima: «1 mujer detenida», «dos personas sin identificar», «sin autor publicado». |
+| `subject.detained` | No | `true`, `false` o `null` cuando la fuente no lo indica. No es una afirmación de culpabilidad. |
+| `subject.count` | No | Número de personas citadas por la fuente, si se conoce. |
+| `subject.sex` | No | `male`, `female`, `mixed` o `unknown` si no se publica. |
+| `subject.age` | No | Tramo de edad publicado; usa `—` si no consta. |
+| `subject.group` | No | `true` si la fuente habla de un grupo, `false` si fue una actuación individual y `null` si no consta. |
+| `subject.role` | No | `caller`, `object`, `explosives`, `intruder`, `video` o `unknown`. |
+| `subject.method` | No | Método atribuido por la fuente (llamada, objeto abandonado, etc.). |
+| `subject.description` | No | Descripción pública del sujeto, sin nombres ni datos identificativos. |
 | `verified` | No | `true` cuando el aviso ha sido contrastado con las fuentes enlazadas y revisado editorialmente. No implica confirmación oficial si solo hay prensa. |
 | `demo` | No | `true` para ejemplos ficticios; se muestra una etiqueta. |
 | `source` | Sí | Fuente principal. Se mantiene por compatibilidad. |
@@ -121,7 +145,13 @@ Estados y resultado:
 | `investigating` | Pendiente | Aviso en investigación o sin resultado publicado. |
 | `evacuated` | Pendiente | Evacuación preventiva en curso o sin confirmación posterior. |
 
-Porcentajes: el balance calcula el porcentaje de falsas alarmas y de casos reales **sobre los avisos resueltos** (`hoax` + `cleared` + `confirmed`). Los avisos `investigating` y `evacuated` se muestran aparte para no inflar artificialmente ninguno de los dos lados.
+Porcentajes: el balance calcula el porcentaje de falsas alarmas y de casos reales **sobre los avisos resueltos** (`hoax` + `cleared` + `confirmed`). Los avisos `investigating` y `evacuated` se muestran aparte para no inflar artificialmente ninguno de los dos lados. El ratio de falsas por cada caso real usa el mismo conjunto resuelto.
+
+### Sujeto y autoría
+
+El bloque `subject` distingue entre quien hizo la llamada y quien dejó un objeto, porque no siempre son la misma persona. Solo se rellena con información publicada por la fuente; si no hay autor conocido, se usa `unidentified`, `no_data` o `not_applicable` según corresponda.
+
+Los estados de `subject.status` son: `detained` (detenido), `fugitive` (en busca y captura), `identified` (identificado sin detención confirmada), `unidentified` (autor no identificado), `mixed` (mezcla de estados), `no_data` (sin datos publicados) y `not_applicable` (caso sin persona implicada, como un objeto abandonado).
 
 Precisión de la fecha y hora:
 
@@ -159,14 +189,15 @@ Los avisos de amenaza de bomba son información sensible: **no publiques detalle
 
 ## Análisis y perfil
 
-`data/analysis.json` contiene el análisis editorial de la oleada y el perfil provisional de la autoría. Se muestra en el modal «Análisis» y alimenta los apartados de hipótesis, indicadores, casos conocidos y casos reales.
+`data/analysis.json` contiene el análisis editorial de la oleada y el perfil provisional de la autoría. Se muestra en el modal «Análisis» y alimenta los apartados de hipótesis, indicadores, comparativa de sujetos, casos conocidos y casos reales. La web también calcula el ratio de falsas frente a reales y el ranking de actividad por país a partir de `incidents.json`.
 
 - El perfil se basa en fuentes abiertas y es **provisional**.
 - El análisis y sus porcentajes usan el conjunto completo de avisos; los filtros del mapa no alteran esas cifras.
 - No atribuye delitos a personas concretas ni sustituye a la investigación policial.
 - No incluye nombres, alias ni datos identificativos de detenidos o sospechosos.
 - Las etiquetas de confianza (`confirmado`, `indicios`, `hipotesis`, `separado`) son una valoración editorial, no una calificación policial.
-- Los porcentajes del análisis se calculan sobre los avisos resueltos y cambian al actualizar `incidents.json`.
+- Los porcentajes y el ratio del análisis se calculan sobre los avisos resueltos y cambian al actualizar `incidents.json`.
+- El ranking por país usa avisos pendientes, avisos de los últimos 30 días y fuentes de prensa únicas de ese mismo periodo.
 
 Estructura mínima:
 
@@ -181,6 +212,12 @@ Estructura mínima:
     "indicators": ["..."],
     "known_cases": [{ "date": "...", "place": "...", "profile": "...", "method": "...", "motive": "...", "outcome": "...", "source": "https://..." }],
     "known_cases_note": "..."
+  },
+  "subject_profile": {
+    "summary": "...",
+    "shared_traits": ["..."],
+    "differences": ["..."],
+    "caveat": "..."
   },
   "real_attack_profile": {
     "title": "...",
@@ -223,8 +260,8 @@ La primera ejecución puede tardar un par de minutos. El resultado aparece en la
 Ahora mismo la actualización es **manual y revisada**:
 
 1. Localiza publicaciones policiales, oficiales y de prensa sobre el aviso.
-2. Añade o actualiza el aviso en `data/incidents.json` con coordenadas, fuentes y resultado.
-3. Revisa el perfil y las fuentes de `data/analysis.json` si el caso cambia el análisis.
+2. Añade o actualiza el aviso en `data/incidents.json` con coordenadas, fuentes, resultado y bloque `subject` si la fuente publica información sobre autoría.
+3. Revisa el perfil, la comparativa de sujetos y las fuentes de `data/analysis.json` si el caso cambia el análisis.
 4. Haz commit y push a `main`.
 5. Pages se actualiza solo.
 
@@ -247,6 +284,8 @@ Así se evita el scraping agresivo, los bulos y las notificaciones falsas.
 - Algunos avisos solo cuentan con cobertura de prensa; se etiquetan como tales y no deben interpretarse como confirmación oficial.
 - Los porcentajes se calculan sobre casos resueltos y pueden cambiar cuando se publican nuevos datos.
 - El perfil incluido en el análisis es **provisional** y no atribuye delitos a personas concretas.
+- La autoría y la detención dependen de lo que publique cada fuente; no se infiere una red ni una culpabilidad a partir de coincidencias.
+- Las estadísticas por país reflejan la cobertura pública disponible, no necesariamente el riesgo real de cada territorio.
 - Algunas notas no indican la hora exacta; en esos casos la ficha lo aclara y no se inventa una hora.
 - No es un servicio de alerta ni de emergencia. Ante cualquier amenaza, llama al **112** o al servicio de emergencias local.
 - La información mostrada no sustituye a las comunicaciones oficiales.

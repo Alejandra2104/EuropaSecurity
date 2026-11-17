@@ -109,6 +109,60 @@ const CONFIDENCE = {
   separado: { label: 'Caso separado', className: 'confidence-separado' }
 };
 
+const SEX_LABELS = {
+  male: 'hombre',
+  female: 'mujer',
+  mixed: 'mixto',
+  unknown: ''
+};
+
+const SUBJECT_STATUSES = {
+  detained: {
+    label: 'Detenido',
+    className: 'subject-detained',
+    icon: 'fa-user-lock'
+  },
+  fugitive: {
+    label: 'En busca y captura',
+    className: 'subject-fugitive',
+    icon: 'fa-person-running'
+  },
+  identified: {
+    label: 'Identificado',
+    className: 'subject-identified',
+    icon: 'fa-user-check'
+  },
+  unidentified: {
+    label: 'Sin identificar',
+    className: 'subject-unidentified',
+    icon: 'fa-user-secret'
+  },
+  mixed: {
+    label: 'Parcialmente identificado',
+    className: 'subject-mixed',
+    icon: 'fa-users'
+  },
+  no_data: {
+    label: 'Sin datos publicados',
+    className: 'subject-no-data',
+    icon: 'fa-circle-question'
+  },
+  not_applicable: {
+    label: 'Sin autor / no aplica',
+    className: 'subject-na',
+    icon: 'fa-minus'
+  }
+};
+
+const SUBJECT_ROLES = {
+  object: 'Dejó el objeto',
+  caller: 'Llamada o amenaza',
+  explosives: 'Explosivos',
+  intruder: 'Intrusión',
+  video: 'Difusión de vídeo',
+  unknown: 'Sin determinar'
+};
+
 const DATA_URL = 'data/incidents.json';
 const SOURCES_URL = 'data/sources.json';
 const ANALYSIS_URL = 'data/analysis.json';
@@ -235,6 +289,69 @@ function normalizeSource(raw) {
   };
 }
 
+function normalizeSubject(raw) {
+  const data = raw && typeof raw === 'object' ? raw : {};
+  const status = SUBJECT_STATUSES[data.status] ? data.status : 'unidentified';
+  const count = Number(data.count);
+  const sex = ['male', 'female', 'mixed', 'unknown'].includes(data.sex) ? data.sex : 'unknown';
+  const role = SUBJECT_ROLES[data.role] ? data.role : 'unknown';
+
+  return {
+    status,
+    label: String(data.label || SUBJECT_STATUSES[status].label),
+    detained: data.detained === true ? true : data.detained === false ? false : null,
+    count: Number.isFinite(count) && count > 0 ? count : null,
+    sex,
+    age: String(data.age || ''),
+    group: typeof data.group === 'boolean' ? data.group : null,
+    role,
+    method: String(data.method || ''),
+    description: String(data.description || '')
+  };
+}
+
+function subjectStatus(subject) {
+  return SUBJECT_STATUSES[subject?.status] || SUBJECT_STATUSES.unidentified;
+}
+
+function subjectBadge(subject) {
+  const status = subjectStatus(subject);
+  return `<span class="subject-badge ${status.className}"><i class="fa-solid ${status.icon}" aria-hidden="true"></i> ${escapeHtml(status.label)}</span>`;
+}
+
+function subjectChip(subject) {
+  const status = subjectStatus(subject);
+  return `<span class="subject-chip ${status.className}"><i class="fa-solid ${status.icon}" aria-hidden="true"></i> ${escapeHtml(subject.label)}</span>`;
+}
+
+function subjectDetail(subject) {
+  const parts = [];
+  if (subject.count) parts.push(formatCount(subject.count, 'persona', 'personas'));
+  if (subject.sex !== 'unknown' && SEX_LABELS[subject.sex]) parts.push(SEX_LABELS[subject.sex]);
+  if (subject.age) parts.push(`edad ${subject.age}`);
+  return parts.join(' · ');
+}
+
+function detentionText(subject) {
+  if (subject.status === 'fugitive') return 'En busca y captura';
+  if (subject.detained === true) return 'Sí';
+  if (subject.detained === null) return 'Sin datos';
+  return 'No consta';
+}
+
+function detentionBadge(subject) {
+  if (subject.status === 'fugitive') {
+    return '<span class="subject-badge subject-fugitive"><i class="fa-solid fa-person-running" aria-hidden="true"></i> En busca</span>';
+  }
+  if (subject.detained === true) {
+    return '<span class="subject-badge subject-detained"><i class="fa-solid fa-user-lock" aria-hidden="true"></i> Sí</span>';
+  }
+  if (subject.detained === null) {
+    return '<span class="subject-badge subject-no-data"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Sin datos</span>';
+  }
+  return '<span class="subject-badge subject-unidentified"><i class="fa-solid fa-user-secret" aria-hidden="true"></i> No consta</span>';
+}
+
 function normalizeIncident(raw) {
   if (!raw || typeof raw !== 'object') return null;
 
@@ -274,6 +391,7 @@ function normalizeIncident(raw) {
     status,
     outcome,
     summary: String(raw.summary || ''),
+    subject: normalizeSubject(raw.subject),
     demo: Boolean(raw.demo),
     verified: Boolean(raw.verified),
     sources,
@@ -341,6 +459,8 @@ async function init() {
     renderSources();
     renderMeta(data.meta || {});
     renderAnalysisProfile();
+    renderCountryStats(state.incidents);
+    renderSubjectComparison(state.incidents);
     bindUI();
     applyFilters({ fit: true });
   } catch (error) {
@@ -513,6 +633,17 @@ function popupHtml(incident) {
         <span><strong>${escapeHtml(status.label)}</strong> · ${escapeHtml(outcomeDetail(incident))}</span>
       </div>
       <p class="popup-summary">${escapeHtml(incident.summary)}</p>
+      <div class="popup-subject">
+        <p class="popup-sources-title">Sujeto y autoría</p>
+        <p class="subject-line">
+          ${subjectBadge(incident.subject)}
+          <strong>${escapeHtml(incident.subject.label)}</strong>
+        </p>
+        ${subjectDetail(incident.subject) ? `<p class="subject-meta">${escapeHtml(subjectDetail(incident.subject))}</p>` : ''}
+        <p class="subject-meta"><strong>Papel:</strong> ${escapeHtml(SUBJECT_ROLES[incident.subject.role] || SUBJECT_ROLES.unknown)} · <strong>Detención:</strong> ${escapeHtml(detentionText(incident.subject))}</p>
+        <p class="subject-meta"><strong>Método:</strong> ${escapeHtml(incident.subject.method || 'No publicado')}</p>
+        <p class="subject-meta">${escapeHtml(incident.subject.description)}</p>
+      </div>
       <div class="popup-badges">
         <span class="badge ${status.className}"><i class="fa-solid ${status.icon}" aria-hidden="true"></i> ${escapeHtml(status.label)}</span>
         ${incident.demo ? '<span class="badge badge-demo">Ejemplo ficticio</span>' : ''}
@@ -587,6 +718,11 @@ function getFilteredIncidents(options = {}) {
         incident.place,
         incident.country_name,
         incident.summary,
+        incident.subject.label,
+        incident.subject.description,
+        incident.subject.method,
+        SUBJECT_STATUSES[incident.subject.status].label,
+        SUBJECT_ROLES[incident.subject.role],
         CATEGORIES[incident.category].label,
         STATUSES[incident.status].label,
         OUTCOMES[incident.outcome].label,
@@ -754,6 +890,8 @@ function renderAnalysisStats(incidents, stats) {
   const policeCoverage = incidents.filter((incident) => incident.sources.some((source) => source.type === 'police')).length;
   const pressCoverage = incidents.filter((incident) => incident.sources.some((source) => source.type === 'press')).length;
   const officialCoverage = incidents.filter((incident) => incident.sources.some((source) => source.type === 'official' || source.type === 'official_statement')).length;
+  const ratio = stats.real ? stats.falseOrCleared / stats.real : null;
+  const ratioText = ratio ? `${percentFormatter.format(ratio)} : 1` : '—';
 
   container.innerHTML = `
     <div class="stat-cards">
@@ -777,6 +915,11 @@ function renderAnalysisStats(incidents, stats) {
         <strong>${stats.pending}</strong>
         <small>${formatPercent(pct(stats.pending))} del total · fuera del porcentaje</small>
       </div>
+      <div class="stat-card stat-ratio">
+        <span>Ratio falsas / reales</span>
+        <strong>${ratioText}</strong>
+        <small>${stats.real ? `${stats.falseOrCleared} falsas frente a ${stats.real} reales` : 'Sin casos reales confirmados'}</small>
+      </div>
     </div>
 
     <div class="analysis-bar" role="img" aria-label="Distribución de casos resueltos: falsas o descartadas ${formatPercent(stats.falseShare)}; reales confirmadas ${formatPercent(stats.realShare)}. Pendientes: ${stats.pending}, fuera del porcentaje.">
@@ -790,6 +933,7 @@ function renderAnalysisStats(incidents, stats) {
       ${stats.resolved
         ? `Entre los casos resueltos (${stats.resolved}), el <strong>${formatPercent(stats.falseShare)}</strong> son falsas alarmas o avisos descartados y el <strong>${formatPercent(stats.realShare)}</strong> son amenazas reales confirmadas.`
         : 'No hay casos resueltos en el conjunto registrado.'}
+      ${stats.real ? `En términos relativos, hay <strong>${percentFormatter.format(ratio)} falsas por cada caso real</strong>.` : ''}
       Los avisos pendientes (${stats.pending}) se mantienen fuera de ese porcentaje y de la barra superior.
     </p>
 
@@ -844,6 +988,220 @@ function renderAnalysisStats(incidents, stats) {
 
     <h4 class="profile-subhead">Evolución mensual</h4>
     ${monthlyChartHtml(incidents)}`;
+}
+
+function computeCountryStats(incidents) {
+  const cutoff = Date.now() - 30 * 86400000;
+  const countries = new Map();
+
+  incidents.forEach((incident) => {
+    const code = incident.country || 'XX';
+    if (!countries.has(code)) {
+      countries.set(code, {
+        code,
+        name: incident.country_name || code,
+        total: 0,
+        falseOrCleared: 0,
+        real: 0,
+        pending: 0,
+        recent: 0,
+        latest: null,
+        pressRecent: new Set()
+      });
+    }
+
+    const country = countries.get(code);
+    country.total += 1;
+
+    if (incident.outcome === 'false') country.falseOrCleared += 1;
+    else if (incident.outcome === 'real') country.real += 1;
+    else country.pending += 1;
+
+    const isRecent = Boolean(incident.date && incident.date.getTime() >= cutoff);
+    if (incident.date) {
+      if (isRecent) country.recent += 1;
+      if (!country.latest || incident.date > country.latest) country.latest = incident.date;
+    }
+
+    if (isRecent) {
+      incident.sources.forEach((source) => {
+        if (source.type === 'press' && source.url) country.pressRecent.add(source.url);
+      });
+    }
+  });
+
+  return Array.from(countries.values())
+    .map((country) => ({
+      ...country,
+      pressRecent: country.pressRecent.size
+    }))
+    .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name, 'es'));
+}
+
+function countryFocus(countries) {
+  const byRecent = [...countries].sort((a, b) => b.recent - a.recent || b.total - a.total);
+  const byPress = [...countries].sort((a, b) => b.pressRecent - a.pressRecent || b.total - a.total);
+  const pending = countries
+    .filter((country) => country.pending > 0)
+    .sort((a, b) => b.pending - a.pending || a.name.localeCompare(b.name, 'es'));
+  const latest = [...countries]
+    .filter((country) => country.latest)
+    .sort((a, b) => b.latest - a.latest)[0] || null;
+
+  const topPending = pending[0]?.pending || 0;
+  const pendingNames = pending
+    .filter((country) => country.pending === topPending)
+    .map((country) => country.name);
+
+  return {
+    recent: byRecent[0] || null,
+    press: byPress[0] || null,
+    pendingNames,
+    topPending,
+    latest
+  };
+}
+
+function renderCountryStats(incidents) {
+  const container = el('analysis-country');
+  if (!container) return;
+
+  const countries = computeCountryStats(incidents);
+  if (!countries.length) {
+    container.innerHTML = '<p class="note-empty">No hay datos por país.</p>';
+    return;
+  }
+
+  const focus = countryFocus(countries);
+  const pendingText = focus.topPending
+    ? `${focus.pendingNames.join(' y ')} · ${focus.topPending} ${focus.topPending === 1 ? 'pendiente' : 'pendientes'}${focus.pendingNames.length > 1 ? ' cada uno' : ''}`
+    : 'Sin avisos pendientes';
+  const recentText = focus.recent?.recent
+    ? `${focus.recent.name} · ${formatCount(focus.recent.recent, 'aviso', 'avisos')}`
+    : 'Sin avisos en 30 días';
+  const pressText = focus.press?.pressRecent
+    ? `${focus.press.name} · ${formatCount(focus.press.pressRecent, 'fuente', 'fuentes')}`
+    : 'Sin prensa reciente';
+  const latestText = focus.latest
+    ? `${focus.latest.name} · ${formatShortDate(focus.latest.latest, 'day')}`
+    : 'Sin fecha';
+
+  container.innerHTML = `
+    <div class="country-focus">
+      <div class="country-focus-card">
+        <span class="country-focus-label"><i class="fa-solid fa-bell" aria-hidden="true"></i> Alerta activa</span>
+        <strong>${escapeHtml(pendingText)}</strong>
+        <small>Avisos pendientes por país</small>
+      </div>
+      <div class="country-focus-card">
+        <span class="country-focus-label"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> Más avisos · 30 días</span>
+        <strong>${escapeHtml(recentText)}</strong>
+        <small>Volumen reciente</small>
+      </div>
+      <div class="country-focus-card">
+        <span class="country-focus-label"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Más prensa · 30 días</span>
+        <strong>${escapeHtml(pressText)}</strong>
+        <small>URLs únicas de prensa</small>
+      </div>
+      <div class="country-focus-card">
+        <span class="country-focus-label"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Último aviso</span>
+        <strong>${escapeHtml(latestText)}</strong>
+        <small>Fecha más reciente registrada</small>
+      </div>
+    </div>
+
+    <div class="country-table-wrap">
+      <table class="stats-table country-table">
+        <thead>
+          <tr>
+            <th>País</th>
+            <th class="num">Avisos</th>
+            <th class="num">Falsas/desc.</th>
+            <th class="num">Reales</th>
+            <th class="num">Pendientes</th>
+            <th class="num">30 días</th>
+            <th class="num">Prensa 30 d</th>
+            <th>Último aviso</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${countries.map((country) => `
+            <tr>
+              <td><strong>${escapeHtml(country.name)}</strong> <span class="muted">${escapeHtml(country.code)}</span></td>
+              <td class="num">${country.total}</td>
+              <td class="num">${country.falseOrCleared}</td>
+              <td class="num">${country.real}</td>
+              <td class="num">${country.pending}</td>
+              <td class="num">${country.recent}</td>
+              <td class="num" title="URLs únicas de prensa en los últimos 30 días">${country.pressRecent}</td>
+              <td>${country.latest ? escapeHtml(formatShortDate(country.latest, 'day')) : '—'}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="analysis-caption">
+      «Últimamente» equivale a los últimos 30 días. La alerta activa se mide por avisos pendientes (en investigación o evacuación);
+      las fuentes de prensa se cuentan por URL única y solo para avisos de ese periodo. El recuento usa el conjunto completo, no los filtros del mapa.
+    </p>`;
+}
+
+function renderSubjectComparison(incidents) {
+  const container = el('analysis-subjects');
+  if (!container) return;
+
+  const profile = state.analysis?.subject_profile || {};
+  const shared = Array.isArray(profile.shared_traits) ? profile.shared_traits : [];
+  const differences = Array.isArray(profile.differences) ? profile.differences : [];
+  const comparable = incidents
+    .filter((incident) => ['detained', 'fugitive', 'identified', 'mixed'].includes(incident.subject.status))
+    .sort((a, b) => {
+      if (!a.date && !b.date) return 0;
+      if (!a.date) return 1;
+      if (!b.date) return -1;
+      return b.date - a.date;
+    });
+
+  const traitsHtml = shared.length || differences.length
+    ? `<div class="subject-traits">
+        ${shared.length ? `<div class="profile-callout info"><strong>Qué comparten</strong><ul class="profile-list">${shared.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>` : ''}
+        ${differences.length ? `<div class="profile-callout warning"><strong>Qué los diferencia</strong><ul class="profile-list">${differences.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>` : ''}
+      </div>`
+    : '';
+
+  container.innerHTML = `
+    <p class="profile-summary">${escapeHtml(profile.summary || 'No hay un perfil único de autoría. La comparación se limita a los avisos con algún sujeto identificado, investigado o detenido.')}</p>
+    ${traitsHtml}
+    <p class="analysis-caption">Se comparan ${formatCount(comparable.length, 'aviso con sujeto identificado, investigado o detenido', 'avisos con sujeto identificado, investigado o detenido')}. La tabla no incluye nombres ni datos personales.</p>
+    <div class="known-cases subject-cases">
+      <table>
+        <thead>
+          <tr>
+            <th>Caso</th>
+            <th>Sujeto</th>
+            <th>Detención</th>
+            <th>Papel</th>
+            <th>Método</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${comparable.map((incident) => {
+            const status = STATUSES[incident.status] || STATUSES.investigating;
+            const detail = subjectDetail(incident.subject);
+            return `<tr>
+              <td><strong>${escapeHtml(incident.locality)}</strong><br><span class="muted">${escapeHtml(incident.country_name || incident.country)} · ${escapeHtml(formatShortDate(incident.datetime, incident.time_precision))}</span></td>
+              <td>${escapeHtml(incident.subject.label)}${detail ? `<br><span class="muted">${escapeHtml(detail)}</span>` : ''}</td>
+              <td>${detentionBadge(incident.subject)}</td>
+              <td>${escapeHtml(SUBJECT_ROLES[incident.subject.role] || SUBJECT_ROLES.unknown)}</td>
+              <td>${escapeHtml(incident.subject.method || 'No publicado')}</td>
+              <td><span class="badge ${status.className}"><i class="fa-solid ${status.icon}" aria-hidden="true"></i> ${escapeHtml(status.label)}</span></td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+    <p class="analysis-caption">${escapeHtml(profile.caveat || '')} El caso de Málaga/Murcia, sin aviso asociado en el mapa, aparece en la tabla de casos conocidos.</p>`;
 }
 
 function renderAnalysisNotes(incidents) {
@@ -951,6 +1309,7 @@ function renderList(incidents) {
           </span>
           <span class="card-place">${escapeHtml(incident.place)}</span>
           <span class="card-meta">${escapeHtml(formatShortDate(incident.datetime, incident.time_precision))} · ${escapeHtml(incident.country_name || incident.country)}</span>
+          <span class="card-subject">${subjectChip(incident.subject)}</span>
           <span class="card-sources"><i class="fa-solid fa-paperclip" aria-hidden="true"></i> ${escapeHtml(sourceSummary(incident))}</span>
         </span>
       </button>`;

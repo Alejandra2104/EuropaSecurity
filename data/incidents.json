@@ -18,6 +18,18 @@
       "time_precision": "exact",
       "status": "confirmed",
       "summary": "Un tiroteo por un conflicto vecinal y la explosión de una mochila con un artefacto real en un edificio de viviendas de Villafría causaron la muerte del subinspector de la Policía Nacional Juan José Rodríguez, de 65 años, y de su perro policía. Un especialista de los TEDAX resultó herido grave. El sospechoso, un hombre de unos 60-65 años con antecedentes por delincuencia común, fue identificado y sigue fugitivo; la Policía mantiene un amplio dispositivo de búsqueda.",
+      "subject": {
+        "status": "fugitive",
+        "label": "Hombre de 60-65 años, fugitivo",
+        "detained": false,
+        "count": 1,
+        "sex": "male",
+        "age": "60-65",
+        "group": false,
+        "role": "object",
+        "method": "Colocó una mochila con un artefacto explosivo real",
+        "description": "Hombre identificado, con antecedentes por delincuencia común; sigue fugitivo. No se publican sus datos personales."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -78,6 +90,18 @@
       "time_precision": "exact",
       "status": "cleared",
       "summary": "Un hombre de 26 años accedió de noche a la zona del aeropuerto y activó el protocolo antiterrorista. Los especialistas en explosivos y una unidad canina registraron las instalaciones hasta las 08:50 sin hallazgos; el aeropuerto reabrió y el hombre fue denunciado.",
+      "subject": {
+        "status": "identified",
+        "label": "Hombre de 26 años, denunciado",
+        "detained": false,
+        "count": 1,
+        "sex": "male",
+        "age": "26",
+        "group": false,
+        "role": "intruder",
+        "method": "Acceso nocturno a una zona restringida del aeropuerto",
+        "description": "Hombre de 26 años identificado y denunciado; no se le atribuye un artefacto explosivo."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -110,6 +134,18 @@
       "time_precision": "day",
       "status": "cleared",
       "summary": "Una maleta grande abandonada en el hall público motivó la evacuación de unas 900 personas y retrasos en 44 operaciones. La inspección pirotécnica descartó peligro; el propietario fue multado.",
+      "subject": {
+        "status": "identified",
+        "label": "Propietario identificado y multado",
+        "detained": false,
+        "count": 1,
+        "sex": "unknown",
+        "age": "",
+        "group": false,
+        "role": "object",
+        "method": "Maleta grande abandonada en el hall",
+        "description": "Propietario identificado y multado; la maleta solo contenía objetos personales."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -142,6 +178,18 @@
       "time_precision": "day",
       "status": "confirmed",
       "summary": "Durante un registro en un apartamento se hallaron dos tubos bomba viables. El complejo se evacuó, el equipo de desactivación del Ejército los retiró y cuatro personas fueron detenidas.",
+      "subject": {
+        "status": "detained",
+        "label": "4 personas detenidas",
+        "detained": true,
+        "count": 4,
+        "sex": "unknown",
+        "age": "",
+        "group": true,
+        "role": "explosives",
+        "method": "Tubos bomba hallados en un registro",
+        "description": "Cuatro personas detenidas; no se publican nombres ni edades."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -174,6 +222,18 @@
       "time_precision": "exact",
       "status": "cleared",
       "summary": "Un particular avisó de un objeto sospechoso junto a un portal. La zona se acordonó, se contactó con el equipo nacional de desactivación y se evacuó a algunos vecinos; el objeto resultó inocuo y se abrió una investigación por amenazas graves.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Objeto sospechoso junto a un portal",
+        "description": "No hay detenidos ni autor identificado; se investiga por amenazas graves."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -206,6 +266,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Un viajero de 24 años afirmó en la zona de seguridad que llevaba una bomba en su equipaje. Se interrumpió el vuelo y se desalojó la zona; la inspección no halló indicios de peligro. El hombre fue excluido de su vuelo a Hurghada y se abrió una investigación por amenaza de delito.",
+      "subject": {
+        "status": "identified",
+        "label": "Hombre de 24 años, investigado",
+        "detained": false,
+        "count": 1,
+        "sex": "male",
+        "age": "24",
+        "group": false,
+        "role": "caller",
+        "method": "Afirmó llevar una bomba en su equipaje",
+        "description": "Viajero de 24 años identificado; se le excluyó del vuelo y se abrió una investigación."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -238,6 +310,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Un hombre se presentó en la puerta principal de la base aérea afirmando llevar una bomba y portaba una bolsa que parecía un artefacto. Se desalojó la zona; el equipo de desactivación de explosivos no encontró explosivos y el hombre fue detenido.",
+      "subject": {
+        "status": "detained",
+        "label": "Hombre detenido",
+        "detained": true,
+        "count": 1,
+        "sex": "male",
+        "age": "",
+        "group": false,
+        "role": "caller",
+        "method": "Bolsa que parecía un artefacto en la puerta principal",
+        "description": "Hombre detenido; la bolsa no contenía explosivos."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -270,6 +354,18 @@
       "time_precision": "exact",
       "status": "investigating",
       "summary": "La policía recibió un aviso sobre tres vehículos sospechosos que se dirigían a la base aérea. Cinco hombres fueron detenidos por delitos relacionados con explosivos y terrorismo; se estableció un cordón de 400 m y se evacuó a unas 85 viviendas mientras el Ejército examinaba los vehículos. Investigación en curso.",
+      "subject": {
+        "status": "detained",
+        "label": "5 hombres detenidos",
+        "detained": true,
+        "count": 5,
+        "sex": "male",
+        "age": "",
+        "group": true,
+        "role": "caller",
+        "method": "Aviso sobre tres vehículos sospechosos",
+        "description": "Cinco hombres detenidos por delitos relacionados con explosivos y terrorismo; investigación en curso."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -302,6 +398,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Un hombre de 23 años afirmó en el aeropuerto Poznań-Ławica que llevaba explosivos y amenazó con detonar una maleta en la estación central si no le dejaban volar a Georgia. Fue reducido por la Guardia Fronteriza; la estación se evacuó y la maleta se comprobó sin riesgo.",
+      "subject": {
+        "status": "identified",
+        "label": "Hombre de 23 años, reducido",
+        "detained": null,
+        "count": 1,
+        "sex": "male",
+        "age": "23",
+        "group": false,
+        "role": "caller",
+        "method": "Amenaza de detonar una maleta en la estación",
+        "description": "Hombre de 23 años reducido por la Guardia Fronteriza; no consta detención formal en la nota. La maleta no contenía explosivos."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -334,6 +442,18 @@
       "time_precision": "approximate",
       "status": "cleared",
       "summary": "Cuatro bultos sin vigilancia en la terminal obligaron a evacuar a unas 1.500 personas. La inspección pirotécnica con equipo especializado y perro detector concluyó que solo contenían objetos personales; las propietarias fueron multadas.",
+      "subject": {
+        "status": "identified",
+        "label": "Propietarias identificadas y multadas",
+        "detained": false,
+        "count": null,
+        "sex": "female",
+        "age": "",
+        "group": true,
+        "role": "object",
+        "method": "Cuatro bultos sin vigilancia en la terminal",
+        "description": "Varias propietarias identificadas y multadas; los bultos solo contenían objetos personales."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -366,6 +486,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Un viajero de 59 años dijo en el control de seguridad que llevaba una bomba. El equipaje se inspeccionó sin hallar objetos peligrosos; la aerolínea le denegó el embarque y la Policía Federal abrió una investigación por amenaza de delito.",
+      "subject": {
+        "status": "identified",
+        "label": "Hombre de 59 años, investigado",
+        "detained": false,
+        "count": 1,
+        "sex": "male",
+        "age": "59",
+        "group": false,
+        "role": "caller",
+        "method": "Afirmó llevar una bomba en el control de seguridad",
+        "description": "Viajero de 59 años identificado; se le denegó el embarque y se abrió una investigación."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -398,6 +530,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Una amenaza de bomba contra un instituto se difundió por redes sociales. El edificio se evacuó y la policía lo registró; la amenaza resultó falsa y el sospechoso quedó bajo custodia.",
+      "subject": {
+        "status": "detained",
+        "label": "Sospechoso bajo custodia",
+        "detained": true,
+        "count": 1,
+        "sex": "unknown",
+        "age": "",
+        "group": false,
+        "role": "caller",
+        "method": "Amenaza de bomba en redes sociales",
+        "description": "Un sospechoso quedó bajo custodia; no se publican datos personales."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -430,6 +574,18 @@
       "time_precision": "exact",
       "status": "cleared",
       "summary": "La policía recibió el aviso de objetos potencialmente sospechosos en el aeropuerto. Se estableció un cordón y el equipo de desactivación los hizo seguros; el incidente no se trató como sospechoso y el aeropuerto reabrió.",
+      "subject": {
+        "status": "not_applicable",
+        "label": "Sin autor; objeto inocuo",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Objetos potencialmente sospechosos",
+        "description": "No se identificó a ningún autor y el incidente no se trató como sospechoso; los objetos se hicieron seguros."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -462,6 +618,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "La policía recibió una amenaza de bomba en el Hospital Nova. Los espacios se registraron con ayuda del personal y la amenaza resultó falsa; se investiga como notificación falsa de peligro.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Amenaza de bomba en el hospital",
+        "description": "No hay detenidos; se investiga como notificación falsa de peligro."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -494,6 +662,18 @@
       "time_precision": "day",
       "status": "cleared",
       "summary": "Parte de la base aérea se evacuó por una situación sospechosa surgida a raíz de un vídeo antiguo difundido en redes. El equipo de desactivación de explosivos concluyó que no había explosivos ni amenaza real.",
+      "subject": {
+        "status": "no_data",
+        "label": "Sin autor identificado",
+        "detained": null,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "video",
+        "method": "Vídeo antiguo difundido en redes",
+        "description": "No se identificó a ningún autor; el vídeo era antiguo y no había explosivos ni amenaza real."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -526,24 +706,36 @@
       "time_precision": "exact",
       "status": "confirmed",
       "summary": "Un hombre de 48 años se acercó al puesto de guardia de la sede policial diciendo que llevaba explosivos. Fue reducido y el equipo de desactivación recogió dos granadas defensivas; el macuto fue objeto de una explosión controlada sin más hallazgos.",
+      "subject": {
+        "status": "identified",
+        "label": "Hombre de 48 años, reducido",
+        "detained": null,
+        "count": 1,
+        "sex": "male",
+        "age": "48",
+        "group": false,
+        "role": "explosives",
+        "method": "Se presentó con dos granadas defensivas",
+        "description": "Hombre de 48 años reducido; se le intervinieron dos granadas defensivas. No consta detención formal en la nota."
+      },
       "verified": true,
       "demo": false,
-  "source": {
-    "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
-    "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
-    "type": "police",
-    "date": "2026-03-06",
-    "note": ""
-  },
-  "sources": [
-    {
-      "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
-      "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
-      "type": "police",
-      "date": "2026-03-06",
-      "note": ""
-    }
-  ]
+      "source": {
+        "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
+        "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
+        "type": "police",
+        "date": "2026-03-06",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
+          "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
+          "type": "police",
+          "date": "2026-03-06",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "cz-2026-01-20-kaplice-schools",
@@ -558,6 +750,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Un correo anónimo amenazó con una explosión en dos escuelas primarias. Los edificios se evacuaron y fueron registrados por agentes, perros detectores y especialistas en explosivos; no se halló ningún artefacto y se abrió una investigación por alarma falsa.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Correo anónimo con amenaza de explosión",
+        "description": "No hay detenidos; se investiga por alarma falsa."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -590,6 +794,18 @@
       "time_precision": "exact",
       "status": "investigating",
       "summary": "Una llamada alertó de una bomba a las 09:24 y la policía acordonó una amplia zona del centro. Se encontró un objeto sospechoso en un patio y se avisó al equipo de desactivación de explosivos; la nota no detalla el resultado final.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Llamada anónima y objeto sospechoso en un patio",
+        "description": "No se ha publicado autor ni detención; investigación abierta."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -622,6 +838,18 @@
       "time_precision": "exact",
       "status": "hoax",
       "summary": "La primera de varias alertas de bomba falsas llegó a las 09:20 y motivó la evacuación de dos escuelas en Hoogezand. En la hora siguiente se recibieron avisos similares en otros centros de Groninga, Emmen y Eelde; la policía detuvo a dos menores.",
+      "subject": {
+        "status": "detained",
+        "label": "2 menores detenidos",
+        "detained": true,
+        "count": 2,
+        "sex": "unknown",
+        "age": "menores",
+        "group": true,
+        "role": "caller",
+        "method": "Varios avisos falsos de bomba",
+        "description": "Dos menores detenidos; no se publican edades ni identidades."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -654,6 +882,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Cuatro avisos por maletas y mochilas sospechosas en el entorno del metro de Sierra Nevada, Alcázar Genil, la rotonda Europa y un colegio obligaron a desplegar a los TEDAX. Todas las intervenciones resultaron falsas alarmas; una mochila era de un estudiante que la había olvidado.",
+      "subject": {
+        "status": "mixed",
+        "label": "Parcialmente identificado",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Cuatro avisos por mochilas y maletas",
+        "description": "Una mochila pertenecía a un estudiante que la olvidó; el resto de avisos no tiene autor identificado."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -700,6 +940,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Cuatro maletas y mochilas sospechosas en menos de 24 horas obligaron a cortar el tráfico, desalojar el centro comercial Bahía Sur y paralizar el tranvía entre Chiclana y Cádiz. Una mochila junto al colegio Reyes Católicos motivó el protocolo y la suspensión temporal de la actividad escolar. Todos los objetos se descartaron sin explosivos; solo uno precisó detonación controlada.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Maletas y mochilas abandonadas",
+        "description": "No hay detenidos ni autor identificado; todos los objetos se descartaron."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -746,6 +998,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "La Policía Nacional recibió dos avisos por mochilas abandonadas en el barrio del Carmen y Santa María de Gracia. Contenían ropa y objetos personales; también se revisó un maletín junto a la Comandancia de la Guardia Civil. No se encontraron artefactos explosivos.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Mochilas abandonadas",
+        "description": "No hay detenidos; las mochilas contenían ropa y objetos personales."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -785,6 +1049,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Una llamada alertó de una bolsa sospechosa en el interior de la parroquia de Nuestra Señora de la Consolación. La Policía desalojó el templo y acordonó la zona; los TEDAX descartaron la presencia de material peligroso.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Bolsa sospechosa y llamada",
+        "description": "No hay autor identificado ni detenciones publicadas."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -824,6 +1100,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Una alerta por una mochila sospechosa en la avenida del Aeropuerto obligó a cortar el tráfico y cerrar terrazas. Los TEDAX trabajaron casi dos horas hasta descartar que el objeto supusiera un peligro.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Mochila sospechosa",
+        "description": "No hay autor identificado ni detenciones publicadas."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -863,6 +1151,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "La Policía acordonó la avenida de la Constitución, junto a la catedral y la parada Archivo de Indias del tranvía, por una maleta sospechosa. Los TEDAX realizaron una detonación controlada; el objeto era una maleta vacía y no contenía explosivos.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Maleta vacía abandonada",
+        "description": "No hay autor identificado ni detenciones publicadas."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -909,6 +1209,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Una maleta abandonada en la plaza de España motivó la intervención de los TEDAX, que la detonaron de forma controlada. No se encontraron explosivos.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Maleta abandonada",
+        "description": "No hay autor identificado ni detenciones publicadas."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -962,6 +1274,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Cuatro vuelos con destino a Barajas, tres desde Londres y uno desde Múnich, recibieron amenazas de explosivos. Aena activó el protocolo y constituyó un comité de seguridad; tras las comprobaciones, las amenazas quedaron descartadas. La víspera se registraron otros cuatro avisos similares.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Amenazas a cuatro vuelos",
+        "description": "No hay detenidos ni autor identificado; las amenazas se descartaron."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1015,6 +1339,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Un aviso de bomba en un vuelo de Ryanair procedente de Mánchester obligó a activar el protocolo en el aeropuerto de Murcia. El avión aterrizó, los 114 pasajeros y 7 tripulantes fueron controlados y la Guardia Civil descartó la presencia de explosivos.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Aviso de bomba en un vuelo",
+        "description": "No hay detenidos ni autor identificado; la Guardia Civil descartó explosivos."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1068,6 +1404,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Un vuelo de LOT con destino a París fue detenido durante el carreteo tras recibir un aviso sobre un posible objeto peligroso. Se cerró temporalmente una pista; la inspección del avión y del equipaje no encontró amenaza y el aeropuerto mantuvo su operativa.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Aviso sobre un objeto peligroso a bordo",
+        "description": "No hay detenidos ni autor identificado; la inspección no halló amenaza."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1114,6 +1462,18 @@
       "time_precision": "exact",
       "status": "hoax",
       "summary": "Un Boeing 737 MAX de LOT procedente de Londres-Heathrow fue desviado a Modlin tras una alerta de bomba. El aeropuerto se cerró temporalmente y se evacuó a 181 personas; los servicios de seguridad no encontraron ningún artefacto y la alerta se canceló a las 12:21.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Alerta de bomba en un vuelo",
+        "description": "No hay detenidos ni autor identificado; no se encontró ningún artefacto."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1160,6 +1520,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Un vuelo de SAS procedente de Copenhague recibió una amenaza de bomba y, tras aterrizar, fue inspeccionado. Se cerró una pista durante las comprobaciones; no se encontraron explosivos y el aeropuerto recuperó la normalidad.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "caller",
+        "method": "Amenaza de bomba a un vuelo",
+        "description": "No hay detenidos ni autor identificado; no se encontraron explosivos."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1206,6 +1578,18 @@
       "time_precision": "day",
       "status": "hoax",
       "summary": "Dos mochilas abandonadas junto a una motocicleta en la calle Mariana Pineda obligaron a acordonar la zona y movilizar a los TEDAX. Los agentes inspeccionaron los objetos y descartaron que contuvieran explosivos.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Dos mochilas abandonadas",
+        "description": "No hay autor identificado ni detenciones publicadas."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1238,6 +1622,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Una llamada anónima alertó de una mochila sospechosa en la estación de Delicias. Se restringieron los accesos y un tren procedente de Madrid se detuvo en Calatayud mientras se comprobaba el objeto, que no contenía explosivos. El 16 de noviembre la Policía Nacional detuvo en Tudela a un hombre que, según la investigación, hizo la llamada porque llegaba tarde a su tren.",
+      "subject": {
+        "status": "detained",
+        "label": "Hombre adulto, detenido",
+        "detained": true,
+        "count": 1,
+        "sex": "male",
+        "age": "adulto",
+        "group": false,
+        "role": "caller",
+        "method": "Llamada anónima",
+        "description": "Hombre adulto detenido en Tudela; según la investigación, llamó porque llegaba tarde a su tren."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1291,6 +1687,18 @@
       "time_precision": "exact",
       "status": "hoax",
       "summary": "Una maleta sospechosa junto a la sede del PSOE de Aragón motivó un perímetro de 200 metros, el desalojo de la zona y la intervención de TEDAX, Subsuelo y UIP. Un robot manipuló el objeto y los especialistas lo detonaron de forma controlada; la maleta estaba vacía. La Policía revisó cámaras para identificar a quien la dejó.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Maleta vacía junto a la sede",
+        "description": "No hay detenidos; la Policía revisa cámaras para identificar a quien dejó la maleta."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1323,6 +1731,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Un hombre y tres mujeres dejaron una maleta entre unos arbustos junto a una de las puertas de la Dirección General de la Guardia Civil. Un vecino alertó y los agentes revisaron las cámaras; la maleta estaba vacía y no contenía explosivos. Los sospechosos no fueron identificados.",
+      "subject": {
+        "status": "unidentified",
+        "label": "4 personas sin identificar",
+        "detained": false,
+        "count": 4,
+        "sex": "mixed",
+        "age": "",
+        "group": true,
+        "role": "object",
+        "method": "Maleta entre unos arbustos",
+        "description": "Un hombre y tres mujeres no identificados; la maleta estaba vacía."
+      },
       "verified": true,
       "demo": false,
       "source": {
@@ -1369,6 +1789,18 @@
       "time_precision": "approximate",
       "status": "hoax",
       "summary": "Una mochila de la que sobresalía un cable apareció junto a una gasolinera y varios supermercados. La Guardia Civil acordonó la zona, desalojó los establecimientos y realizó una detonación controlada; las comprobaciones descartaron explosivos. Por la tarde apareció un segundo objeto sospechoso en la calle Dehesa de los Panes, también sin peligro.",
+      "subject": {
+        "status": "unidentified",
+        "label": "Sin identificar",
+        "detained": false,
+        "count": null,
+        "sex": "unknown",
+        "age": "",
+        "group": null,
+        "role": "object",
+        "method": "Mochila con un cable; segundo objeto",
+        "description": "No hay autor identificado ni detenciones publicadas."
+      },
       "verified": true,
       "demo": false,
       "source": {
