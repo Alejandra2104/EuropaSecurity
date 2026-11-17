@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EuropaSecurity · Avisos de bomba en Europa</title>
-  <meta name="description" content="Mapa interactivo de avisos de bomba en Europa: localidad, lugar exacto, fecha, hora y enlace a la fuente oficial.">
+  <meta name="description" content="Mapa interactivo de avisos de bomba en Europa: notas de policía y prensa, marcado de falsa alarma o amenaza real, balance porcentual y perfil preliminar de los autores.">
   <meta name="theme-color" content="#0b1f33">
   <meta property="og:title" content="EuropaSecurity · Avisos de bomba en Europa">
-  <meta property="og:description" content="Mapa interactivo de avisos de bomba en Europa con fuente oficial.">
+  <meta property="og:description" content="Mapa de avisos de bomba con notas de policía y prensa, falsas alarmas señaladas, porcentaje de falsas vs. reales y análisis de la oleada.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -22,11 +22,17 @@
       <span class="brand-logo" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
       <div>
         <h1>EuropaSecurity</h1>
-        <p>Avisos de bomba en Europa · fuentes oficiales</p>
+        <p>Avisos de bomba en Europa · falsas alarmas y amenazas reales</p>
       </div>
     </div>
     <div class="header-actions">
       <span id="updated-at" class="updated-at">Cargando datos…</span>
+      <button type="button" class="btn ghost" id="open-analysis">
+        <i class="fa-solid fa-chart-simple" aria-hidden="true"></i> Análisis
+      </button>
+      <button type="button" class="btn ghost" id="open-notes" title="Notas de policía y prensa">
+        <i class="fa-solid fa-newspaper" aria-hidden="true"></i> Notas
+      </button>
       <button type="button" class="btn ghost" id="open-methodology">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Metodología
       </button>
@@ -35,7 +41,7 @@
 
   <div id="demo-banner" class="demo-banner" hidden>
     <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-    <span><strong>Modo demo:</strong> los avisos mostrados son ejemplos ficticios, no noticias reales. Sustituye <code>data/incidents.json</code> por avisos verificados con fuente oficial.</span>
+    <span><strong>Modo demo:</strong> los avisos mostrados son ejemplos ficticios, no noticias reales. Sustituye <code>data/incidents.json</code> por avisos verificados con su fuente.</span>
   </div>
 
   <main>
@@ -45,6 +51,10 @@
           <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
           <input id="search" type="search" placeholder="Buscar localidad, lugar o país…" autocomplete="off" aria-label="Buscar avisos">
         </div>
+        <label class="field" for="filter-source">
+          <span>Fuente</span>
+          <select id="filter-source"><option value="">Todas las fuentes</option></select>
+        </label>
         <div class="filter-grid">
           <label class="field" for="filter-country">
             <span>País</span>
@@ -75,11 +85,31 @@
         </div>
       </section>
 
+      <section class="balance" aria-label="Balance de falsas alarmas y alarmas reales">
+        <div class="balance-head">
+          <div>
+            <span class="balance-title">Falsas alarmas vs. reales</span>
+            <span class="balance-sub" id="balance-sub">Calculando…</span>
+          </div>
+          <button type="button" class="link-btn" id="open-analysis-link">Ver análisis</button>
+        </div>
+        <div class="balance-bar" id="balance-bar" role="img" aria-label="Distribución de avisos por resultado"></div>
+        <div class="balance-legend" id="balance-legend"></div>
+        <div class="outcome-chips" id="outcome-chips" role="group" aria-label="Filtrar por resultado">
+          <button type="button" class="chip is-active" data-outcome="" data-label="Todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-outcome="false" data-label="Falsas/descartadas" aria-pressed="false">Falsas/descartadas</button>
+          <button type="button" class="chip" data-outcome="real" data-label="Reales" aria-pressed="false">Reales</button>
+          <button type="button" class="chip" data-outcome="pending" data-label="Pendientes" aria-pressed="false">Pendientes</button>
+        </div>
+      </section>
+
       <div id="incident-list" class="incident-list" aria-live="polite"></div>
 
       <footer class="sidebar-footer">
-        <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Solo fuentes oficiales</span>
-        <span>Datos incompletos por diseño</span>
+        <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Fuentes clasificadas</span>
+        <button type="button" class="link-btn" id="open-notes-footer">
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> Notas de policía y prensa
+        </button>
       </footer>
     </aside>
 
@@ -100,20 +130,51 @@
       <div class="modal-text">
         <p>Este mapa recopila <strong>avisos de bomba</strong> (amenazas, evacuaciones preventivas, falsas alarmas y artefactos confirmados) en países europeos.</p>
         <ul>
-          <li>Solo se incluyen avisos con enlace a una <strong>fuente oficial</strong>: policía, ministerio del Interior, protección civil u organismo público competente. No se usan periódicos, tabloides ni redes sociales.</li>
-          <li>Cada ficha indica localidad, lugar, fecha y hora, estado y el enlace a la publicación oficial.</li>
+          <li>Cada aviso puede incluir varias fuentes: <strong>nota de policía</strong>, <strong>fuente oficial</strong>, <strong>declaración oficial</strong> y <strong>nota de prensa</strong>.</li>
+          <li>La nota de policía procede de una publicación policial; la fuente oficial, de un organismo público competente; la declaración oficial es una manifestación de una autoridad recogida por un medio; la prensa es un artículo periodístico y no equivale a confirmación oficial.</li>
+          <li>Cada ficha indica localidad, lugar, fecha y hora, estado, resultado, fuentes y enlaces. Las falsas alarmas y los avisos descartados se señalan de forma expresa.</li>
           <li>Los datos están <strong>incompletos por diseño</strong>: muchos avisos no se hacen públicos, se retiran o no se confirman.</li>
-          <li>Las falsas alarmas se etiquetan como tal y no deben interpretarse como amenazas reales.</li>
-          <li>No se publican detalles operativos sensibles.</li>
+          <li>El balance compara falsas alarmas declaradas, avisos descartados sin riesgo, amenazas reales confirmadas y casos pendientes. El porcentaje principal se calcula sobre los casos resueltos; los pendientes se muestran aparte.</li>
+          <li>El <strong>perfil provisional del autor o autores</strong> es un análisis preliminar basado en las fuentes. No identifica a personas, no formula acusaciones y respeta la presunción de inocencia.</li>
+          <li>No se publican detalles operativos sensibles ni datos personales.</li>
         </ul>
-        <p class="modal-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Los avisos publicados están contrastados con fuentes oficiales. Cuando la nota solo indica el día, la ficha no muestra una hora inventada; si la hora es aproximada, se señala expresamente.</p>
+        <p class="modal-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Los avisos están contrastados con la fuente enlazada; el filtro «Fuente» permite separar nota de policía, fuente oficial, declaración oficial y prensa. Cuando la fuente solo indica el día, la ficha no muestra una hora inventada; si la hora es aproximada, se señala expresamente.</p>
 
-        <h3>Fuentes oficiales monitorizadas</h3>
+        <h3>Portales oficiales monitorizados</h3>
         <div id="sources-list" class="sources-list"></div>
 
         <h3>Cómo añadir un aviso</h3>
-        <p>Los avisos se editan en <a href="https://github.com/Alejandra2104/EuropaSecurity/edit/main/data/incidents.json" target="_blank" rel="noopener noreferrer"><code>data/incidents.json</code></a>. Cada registro debe incluir coordenadas, fecha/hora ISO 8601 con zona horaria y un enlace a la fuente oficial. Consulta el <a href="https://github.com/Alejandra2104/EuropaSecurity#leer-y-añadir-avisos" target="_blank" rel="noopener noreferrer">README</a> para el esquema completo.</p>
+        <p>Los avisos se editan en <a href="https://github.com/Alejandra2104/EuropaSecurity/edit/main/data/incidents.json" target="_blank" rel="noopener noreferrer"><code>data/incidents.json</code></a>. Cada registro debe incluir coordenadas, fecha/hora ISO 8601 con zona horaria y al menos una fuente. Puede llevar una fuente principal en <code>source</code> y una lista en <code>sources</code> con <code>type</code> igual a <code>police</code>, <code>official</code>, <code>official_statement</code> o <code>press</code>. El análisis se edita en <a href="https://github.com/Alejandra2104/EuropaSecurity/edit/main/data/analysis.json" target="_blank" rel="noopener noreferrer"><code>data/analysis.json</code></a>. Consulta el <a href="https://github.com/Alejandra2104/EuropaSecurity#leer-y-añadir-avisos" target="_blank" rel="noopener noreferrer">README</a> para el esquema completo.</p>
       </div>
+    </div>
+  </div>
+
+  <div class="modal" id="analysis-modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog modal-wide" role="dialog" aria-modal="true" aria-labelledby="analysis-title">
+      <button type="button" class="modal-close" data-close aria-label="Cerrar">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <h2 id="analysis-title">Análisis de la oleada</h2>
+      <p class="analysis-lead" id="analysis-lead">Cargando análisis…</p>
+      <p class="modal-note" id="analysis-disclaimer"></p>
+
+      <section class="analysis-section">
+        <h3>Falsas alarmas vs. alarmas reales</h3>
+        <p class="analysis-caption">El análisis y sus cifras usan el conjunto completo de avisos, no los filtros del mapa.</p>
+        <div id="analysis-stats"></div>
+      </section>
+
+      <section class="analysis-section">
+        <h3>Perfil provisional del autor o autores</h3>
+        <div id="analysis-profile"></div>
+      </section>
+
+      <section class="analysis-section" id="analysis-notes-section">
+        <h3>Notas de policía y prensa</h3>
+        <p class="analysis-note-help">Las notas de prensa no equivalen a confirmación oficial. Cada enlace abre la publicación original; las notas se agrupan por tipo de fuente. Se muestran todas las notas del conjunto, sin aplicar los filtros del mapa.</p>
+        <div id="analysis-notes"></div>
+      </section>
     </div>
   </div>
 

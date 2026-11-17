@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated_at": "2026-11-13T22:48:47+01:00",
+    "updated_at": "2026-11-17T12:00:00+01:00",
     "demo": false,
-    "data_note": "Avisos reales contrastados con publicaciones oficiales. La exactitud de la hora se indica en el campo time_precision de cada aviso."
+    "data_note": "Avisos contrastados con notas policiales, fuentes oficiales y prensa. Cada aviso puede tener varias fuentes y un resultado: falsa alarma, descartado, real o pendiente."
   },
   "incidents": [
     {
@@ -14,17 +14,56 @@
       "lat": 43.3531,
       "lon": -5.8347,
       "category": "other",
-      "datetime": "2026-11-10T00:00:00+01:00",
-      "time_precision": "day",
+      "datetime": "2026-11-10T07:30:00+01:00",
+      "time_precision": "exact",
       "status": "confirmed",
-      "summary": "Un tiroteo y una explosión en un edificio de viviendas de Villafría causaron la muerte del subinspector de la Policía Nacional Juan José Rodríguez. El inmueble fue desalojado y los técnicos descartaron daños estructurales.",
+      "summary": "Un tiroteo por un conflicto vecinal y la explosión de una mochila con un artefacto real en un edificio de viviendas de Villafría causaron la muerte del subinspector de la Policía Nacional Juan José Rodríguez, de 65 años, y de su perro policía. Un especialista de los TEDAX resultó herido grave. El sospechoso, un hombre de unos 60-65 años con antecedentes por delincuencia común, fue identificado y sigue fugitivo; la Policía mantiene un amplio dispositivo de búsqueda.",
       "verified": true,
       "demo": false,
       "source": {
         "name": "Gobierno del Principado de Asturias — Actualidad",
         "url": "https://actualidad.asturias.es/-/villafria11",
-        "type": "official"
-      }
+        "type": "official",
+        "date": "2026-11-09",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Gobierno del Principado de Asturias — Actualidad",
+          "url": "https://actualidad.asturias.es/-/villafria11",
+          "type": "official",
+          "date": "2026-11-09",
+          "note": ""
+        },
+        {
+          "name": "El País — Búsqueda del sospechoso",
+          "url": "https://elpais.com/espana/2026-11-11/pistas-falsas-y-controles-en-carreteras-continua-la-busqueda-del-fugitivo-responsable-del-explosivo-que-mato-a-un-policia-en-oviedo.html",
+          "type": "press",
+          "date": "2026-11-11",
+          "note": "Búsqueda del sospechoso y contexto del tiroteo previo."
+        },
+        {
+          "name": "RTVE — Un policía muerto y otro herido grave",
+          "url": "https://www.rtve.es/noticias/20261110/policia-muerto-otro-herido-grave-explosion-oviedo/17307427.shtml",
+          "type": "press",
+          "date": "2026-11-10",
+          "note": "Fallecen el subinspector y su perro policía; un TEDAX resulta herido grave."
+        },
+        {
+          "name": "El Confidencial — Cronología de la investigación",
+          "url": "https://www.elconfidencial.com/espana/2026-11-12/tiroteo-explosion-oviedo-policia-herido-directo_4463118/",
+          "type": "press",
+          "date": "2026-11-13",
+          "note": "Cronología, registros y detalles del artefacto real."
+        },
+        {
+          "name": "elDiario.es — Aviso de la Policía asturiana",
+          "url": "https://www.eldiario.es/asturias/policia-asturiana-alerta-consecuencias-penales-proliferacion-falsas-alarmas-artefactos-explosivos_1_13662816.html",
+          "type": "press",
+          "date": "2026-11-13",
+          "note": "La Policía alerta del efecto psicosis y de las consecuencias penales de las falsas alarmas."
+        }
+      ]
     },
     {
       "id": "it-2026-11-01-bolzano-airport",
@@ -44,8 +83,19 @@
       "source": {
         "name": "Questura di Bolzano — Polizia di Stato",
         "url": "https://questure.poliziadistato.it/it/Bolzano/articolo/18036aeca14920ae5286158764/",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-11-01",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Questura di Bolzano — Polizia di Stato",
+          "url": "https://questure.poliziadistato.it/it/Bolzano/articolo/18036aeca14920ae5286158764/",
+          "type": "police",
+          "date": "2026-11-01",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "pl-2026-10-25-warsaw-chopin-baggage",
@@ -65,8 +115,19 @@
       "source": {
         "name": "Straż Graniczna — Komenda Główna",
         "url": "https://www.strazgraniczna.pl/pl/aktualnosci/16345,Pozostawiony-bagaz-przyczyna-ewakuacji-blisko-900-osob-na-Lotnisku-Chopina.html",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-10-25",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Straż Graniczna — Komenda Główna",
+          "url": "https://www.strazgraniczna.pl/pl/aktualnosci/16345,Pozostawiony-bagaz-przyczyna-ewakuacji-blisko-900-osob-na-Lotnisku-Chopina.html",
+          "type": "police",
+          "date": "2026-10-25",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "ie-2026-10-19-tallaght-apartments",
@@ -86,8 +147,19 @@
       "source": {
         "name": "An Garda Síochána — Press Releases",
         "url": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/october/19-10-2026-seizure-of-pipe-bombs-and-arrests-tallaght-dublin-24-19th-october-2026.html",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-10-19",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "An Garda Síochána — Press Releases",
+          "url": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/october/19-10-2026-seizure-of-pipe-bombs-and-arrests-tallaght-dublin-24-19th-october-2026.html",
+          "type": "police",
+          "date": "2026-10-19",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "se-2026-10-15-uppsala-object",
@@ -107,8 +179,19 @@
       "source": {
         "name": "Polisen — Region Mitt",
         "url": "https://polisen.se/aktuellt/handelser/2026/oktober/15/15-oktober-16.07-farligt-foremal-misstankt-uppsala/",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-10-15",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Polisen — Region Mitt",
+          "url": "https://polisen.se/aktuellt/handelser/2026/oktober/15/15-oktober-16.07-farligt-foremal-misstankt-uppsala/",
+          "type": "police",
+          "date": "2026-10-15",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "de-2026-10-05-stuttgart-airport",
@@ -128,8 +211,19 @@
       "source": {
         "name": "Bundespolizeiinspektion Flughafen Stuttgart — Presseportal",
         "url": "https://www.presseportal.de/blaulicht/pm/116095/6365383",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-10-05",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Bundespolizeiinspektion Flughafen Stuttgart — Presseportal",
+          "url": "https://www.presseportal.de/blaulicht/pm/116095/6365383",
+          "type": "police",
+          "date": "2026-10-05",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "nl-2026-09-30-leeuwarden-airbase",
@@ -149,8 +243,19 @@
       "source": {
         "name": "Koninklijke Marechaussee",
         "url": "https://www.marechaussee.nl/actueel/nieuws/2026/09/30/man-aangehouden-na-bomdreiging-bij-hoofdpoort-vliegbasis-leeuwarden-geen-explosieven-aangetroffen",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-09-30",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Koninklijke Marechaussee",
+          "url": "https://www.marechaussee.nl/actueel/nieuws/2026/09/30/man-aangehouden-na-bomdreiging-bij-hoofdpoort-vliegbasis-leeuwarden-geen-explosieven-aangetroffen",
+          "type": "police",
+          "date": "2026-09-30",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "gb-2026-09-27-raf-fairford",
@@ -170,8 +275,19 @@
       "source": {
         "name": "Counter Terrorism Policing / Metropolitan Police",
         "url": "https://news.met.police.uk/news/counter-terrorism-policing-update-in-relation-to-incident-in-gloucestershire-513316",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-09-26",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Counter Terrorism Policing / Metropolitan Police",
+          "url": "https://news.met.police.uk/news/counter-terrorism-policing-update-in-relation-to-incident-in-gloucestershire-513316",
+          "type": "police",
+          "date": "2026-09-26",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "pl-2026-09-08-poznan-station",
@@ -191,8 +307,19 @@
       "source": {
         "name": "Straż Graniczna — Komenda Główna",
         "url": "https://strazgraniczna.pl/pl/aktualnosci/16178,Grozil-detonacja-ladunku-na-poznanskim-dworcu.html",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-09-08",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Straż Graniczna — Komenda Główna",
+          "url": "https://strazgraniczna.pl/pl/aktualnosci/16178,Grozil-detonacja-ladunku-na-poznanskim-dworcu.html",
+          "type": "police",
+          "date": "2026-09-08",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "pl-2026-09-08-warsaw-chopin-baggage",
@@ -212,8 +339,19 @@
       "source": {
         "name": "Straż Graniczna — Komenda Główna",
         "url": "https://www.strazgraniczna.pl/pl/aktualnosci/16177,Pozostawione-bagaze-przyczyna-ewakuacji-1500-osob.html",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-09-08",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Straż Graniczna — Komenda Główna",
+          "url": "https://www.strazgraniczna.pl/pl/aktualnosci/16177,Pozostawione-bagaze-przyczyna-ewakuacji-1500-osob.html",
+          "type": "police",
+          "date": "2026-09-08",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "de-2026-09-03-duesseldorf-airport",
@@ -233,8 +371,19 @@
       "source": {
         "name": "Bundespolizeidirektion Sankt Augustin — Presseportal",
         "url": "https://www.presseportal.de/blaulicht/pm/70116/6345495",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-09-03",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Bundespolizeidirektion Sankt Augustin — Presseportal",
+          "url": "https://www.presseportal.de/blaulicht/pm/70116/6345495",
+          "type": "police",
+          "date": "2026-09-03",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "fi-2026-09-03-forssa-school",
@@ -254,8 +403,19 @@
       "source": {
         "name": "Poliisi",
         "url": "https://poliisi.fi/-/forssan-kouluun-kohdistettu-pommiuhkaus-osoittautui-perattomaksi",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-09-03",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Poliisi",
+          "url": "https://poliisi.fi/-/forssan-kouluun-kohdistettu-pommiuhkaus-osoittautui-perattomaksi",
+          "type": "police",
+          "date": "2026-09-03",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "gb-2026-06-19-edinburgh-airport",
@@ -275,8 +435,19 @@
       "source": {
         "name": "Police Scotland",
         "url": "https://www.scotland.police.uk/what-s-happening/news/2026/june/edinburgh-airport-re-opened-following-report-of-potential-suspicious-items/",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-06-19",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Police Scotland",
+          "url": "https://www.scotland.police.uk/what-s-happening/news/2026/june/edinburgh-airport-re-opened-following-report-of-potential-suspicious-items/",
+          "type": "police",
+          "date": "2026-06-19",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "fi-2026-06-09-jyvaskyla-hospital",
@@ -296,8 +467,19 @@
       "source": {
         "name": "Poliisi",
         "url": "https://poliisi.fi/-/poliisitehtava-sairaala-novassa",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-06-09",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Poliisi",
+          "url": "https://poliisi.fi/-/poliisitehtava-sairaala-novassa",
+          "type": "police",
+          "date": "2026-06-09",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "nl-2026-05-04-gilze-rijen-airbase",
@@ -317,8 +499,19 @@
       "source": {
         "name": "Koninklijke Marechaussee",
         "url": "https://www.marechaussee.nl/actueel/nieuws/2026/05/04/marechaussee-reageert-op-verdachte-situatie-vliegbasis-gilze-rijen",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-05-04",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Koninklijke Marechaussee",
+          "url": "https://www.marechaussee.nl/actueel/nieuws/2026/05/04/marechaussee-reageert-op-verdachte-situatie-vliegbasis-gilze-rijen",
+          "type": "police",
+          "date": "2026-05-04",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "gr-2026-03-06-athens-gada",
@@ -335,11 +528,22 @@
       "summary": "Un hombre de 48 años se acercó al puesto de guardia de la sede policial diciendo que llevaba explosivos. Fue reducido y el equipo de desactivación recogió dos granadas defensivas; el macuto fue objeto de una explosión controlada sin más hallazgos.",
       "verified": true,
       "demo": false,
-      "source": {
-        "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
-        "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
-        "type": "official"
-      }
+  "source": {
+    "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
+    "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
+    "type": "police",
+    "date": "2026-03-06",
+    "note": ""
+  },
+  "sources": [
+    {
+      "name": "Ελληνική Αστυνομία — Γ.Ε.Δ. Αττικής",
+      "url": "https://www.astynomia.gr/2026/03/06/06-03-2026-anakoinosi-g-e-d-attikis/",
+      "type": "police",
+      "date": "2026-03-06",
+      "note": ""
+    }
+  ]
     },
     {
       "id": "cz-2026-01-20-kaplice-schools",
@@ -359,8 +563,19 @@
       "source": {
         "name": "Policie České republiky — Jihočeský kraj",
         "url": "https://policie.gov.cz/clanek/vyhruzka-vybuchem-na-zakladnich-skolach.aspx",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-01-20",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Policie České republiky — Jihočeský kraj",
+          "url": "https://policie.gov.cz/clanek/vyhruzka-vybuchem-na-zakladnich-skolach.aspx",
+          "type": "police",
+          "date": "2026-01-20",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "dk-2026-01-13-odense-centre",
@@ -380,8 +595,19 @@
       "source": {
         "name": "Fyns Politi",
         "url": "https://politi.dk/fyns-politi/nyhedsliste/fyns-politi-efterforsker-en-bombetrussel-i-det-centrale-odense/2026/01/13",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-01-13",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Fyns Politi",
+          "url": "https://politi.dk/fyns-politi/nyhedsliste/fyns-politi-efterforsker-en-bombetrussel-i-det-centrale-odense/2026/01/13",
+          "type": "police",
+          "date": "2026-01-13",
+          "note": ""
+        }
+      ]
     },
     {
       "id": "nl-2026-01-08-hoogezand-schools",
@@ -401,8 +627,780 @@
       "source": {
         "name": "Politie Nederland",
         "url": "https://www.politie.nl/nieuws/2026/januari/8/01-twee-minderjarigen-aangehouden-na-valse-bommeldingen.html",
-        "type": "official"
-      }
+        "type": "police",
+        "date": "2026-01-08",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Politie Nederland",
+          "url": "https://www.politie.nl/nieuws/2026/januari/8/01-twee-minderjarigen-aangehouden-na-valse-bommeldingen.html",
+          "type": "police",
+          "date": "2026-01-08",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-13-granada-alerts",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Granada",
+      "place": "Metro de Granada y varios puntos de la ciudad",
+      "lat": 37.1734995,
+      "lon": -3.5995337,
+      "category": "other",
+      "datetime": "2026-11-13T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Cuatro avisos por maletas y mochilas sospechosas en el entorno del metro de Sierra Nevada, Alcázar Genil, la rotonda Europa y un colegio obligaron a desplegar a los TEDAX. Todas las intervenciones resultaron falsas alarmas; una mochila era de un estudiante que la había olvidado.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Granada Hoy",
+        "url": "https://www.granadahoy.com/granada/cuatro-avisos-mochilas-sospechosas-obligan-desplegar-tedax-granada_0_2008496134.html",
+        "type": "press",
+        "date": "2026-11-12",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Granada Hoy",
+          "url": "https://www.granadahoy.com/granada/cuatro-avisos-mochilas-sospechosas-obligan-desplegar-tedax-granada_0_2008496134.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": ""
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Casos en varias ciudades y líneas de investigación policial."
+        },
+        {
+          "name": "El Independiente — Inteligencia europea",
+          "url": "https://www.elindependiente.com/espana/2026/11/15/servicios-inteligencia-europeos-investigan-quien-esta-detras-de-amenazas-de-bomba-y-ciberataques/",
+          "type": "press",
+          "date": "2026-11-15",
+          "note": "Servicios de inteligencia europeos investigan la oleada y una posible guerra híbrida."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-13-cadiz-school",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Cádiz",
+      "place": "Colegio Reyes Católicos",
+      "lat": 36.5099172,
+      "lon": -6.2795813,
+      "category": "education",
+      "datetime": "2026-11-13T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Cuatro maletas y mochilas sospechosas en menos de 24 horas obligaron a cortar el tráfico, desalojar el centro comercial Bahía Sur y paralizar el tranvía entre Chiclana y Cádiz. Una mochila junto al colegio Reyes Católicos motivó el protocolo y la suspensión temporal de la actividad escolar. Todos los objetos se descartaron sin explosivos; solo uno precisó detonación controlada.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "La Región",
+        "url": "https://www.laregion.es/espana/falsas-amenazas-bomba-alarma-espana-mochilas-maletas-sospechosas_1_20261113-4492266.html",
+        "type": "press",
+        "date": "2026-11-12",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "La Región",
+          "url": "https://www.laregion.es/espana/falsas-amenazas-bomba-alarma-espana-mochilas-maletas-sospechosas_1_20261113-4492266.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": ""
+        },
+        {
+          "name": "Diario de Cádiz — Cuatro maletas en menos de 24 horas",
+          "url": "https://www.diariodecadiz.es/vivir_en_cadiz/maletas-sospechosas-abandonadas-cadiz-oleada-falsas-amenazas-afecta-espana_0_2008488344.html",
+          "type": "press",
+          "date": "2026-11-13",
+          "note": "Cuatro avisos en Cádiz, desalojo de Bahía Sur y corte del tranvía; todos sin explosivos."
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Contexto de la oleada nacional de avisos por objetos abandonados."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-13-murcia-backpacks",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Murcia",
+      "place": "Barrio del Carmen y Santa María de Gracia",
+      "lat": 37.9347521,
+      "lon": -1.1131029,
+      "category": "other",
+      "datetime": "2026-11-13T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "La Policía Nacional recibió dos avisos por mochilas abandonadas en el barrio del Carmen y Santa María de Gracia. Contenían ropa y objetos personales; también se revisó un maletín junto a la Comandancia de la Guardia Civil. No se encontraron artefactos explosivos.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Policía Nacional — declaraciones a Cadena SER",
+        "url": "https://cadenaser.com/murcia/2026/11/13/la-policia-nacional-descarta-la-presencia-de-artefactos-explosivos-en-dos-mochilas-abandonadas-en-murcia-este-viernes-y-pide-tranquilidad-radio-murcia/",
+        "type": "official_statement",
+        "date": "2026-11-12",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Policía Nacional — declaraciones a Cadena SER",
+          "url": "https://cadenaser.com/murcia/2026/11/13/la-policia-nacional-descarta-la-presencia-de-artefactos-explosivos-en-dos-mochilas-abandonadas-en-murcia-este-viernes-y-pide-tranquilidad-radio-murcia/",
+          "type": "official_statement",
+          "date": "2026-11-12",
+          "note": ""
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Avisos en Murcia y otras ciudades; ninguno con explosivos."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-12-cordoba-church",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Córdoba",
+      "place": "Parroquia de Nuestra Señora de la Consolación",
+      "lat": 37.8894134,
+      "lon": -4.7962087,
+      "category": "other",
+      "datetime": "2026-11-12T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Una llamada alertó de una bolsa sospechosa en el interior de la parroquia de Nuestra Señora de la Consolación. La Policía desalojó el templo y acordonó la zona; los TEDAX descartaron la presencia de material peligroso.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "El Día de Córdoba",
+        "url": "https://www.eldiadecordoba.es/cordoba/cuatro-posibles-casos-mochila-bomba_0_2008490304.html",
+        "type": "press",
+        "date": "2026-11-11",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "El Día de Córdoba",
+          "url": "https://www.eldiadecordoba.es/cordoba/cuatro-posibles-casos-mochila-bomba_0_2008490304.html",
+          "type": "press",
+          "date": "2026-11-11",
+          "note": ""
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "La parroquia de Córdoba, entre las intervenciones de la oleada."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-12-cordoba-airport-avenue",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Córdoba",
+      "place": "Avenida del Aeropuerto",
+      "lat": 37.8677034,
+      "lon": -4.8112491,
+      "category": "other",
+      "datetime": "2026-11-12T23:00:00+01:00",
+      "time_precision": "approximate",
+      "status": "hoax",
+      "summary": "Una alerta por una mochila sospechosa en la avenida del Aeropuerto obligó a cortar el tráfico y cerrar terrazas. Los TEDAX trabajaron casi dos horas hasta descartar que el objeto supusiera un peligro.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "El Día de Córdoba",
+        "url": "https://www.eldiadecordoba.es/cordoba/sospecha-mochila-bomba-cordoba-policia_0_2008488101.html",
+        "type": "press",
+        "date": "2026-11-12",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "El Día de Córdoba",
+          "url": "https://www.eldiadecordoba.es/cordoba/sospecha-mochila-bomba-cordoba-policia_0_2008488101.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": ""
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Intervenciones por objetos sospechosos en Córdoba y otras ciudades."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-12-sevilla-constitucion",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Sevilla",
+      "place": "Avenida de la Constitución",
+      "lat": 37.3856073,
+      "lon": -5.9940102,
+      "category": "other",
+      "datetime": "2026-11-12T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "La Policía acordonó la avenida de la Constitución, junto a la catedral y la parada Archivo de Indias del tranvía, por una maleta sospechosa. Los TEDAX realizaron una detonación controlada; el objeto era una maleta vacía y no contenía explosivos.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "El Confidencial",
+        "url": "https://www.elconfidencial.com/espana/2026-11-13/8-operativos-policiales-48-horas-psicosis-mochilas-bomba_4463998/",
+        "type": "press",
+        "date": "2026-11-11",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "El Confidencial",
+          "url": "https://www.elconfidencial.com/espana/2026-11-13/8-operativos-policiales-48-horas-psicosis-mochilas-bomba_4463998/",
+          "type": "press",
+          "date": "2026-11-11",
+          "note": ""
+        },
+        {
+          "name": "20minutos — Detonación controlada en Archivo de Indias",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "La maleta fue detonada de forma controlada; no contenía explosivos."
+        },
+        {
+          "name": "El Independiente — Inteligencia europea",
+          "url": "https://www.elindependiente.com/espana/2026/11/15/servicios-inteligencia-europeos-investigan-quien-esta-detras-de-amenazas-de-bomba-y-ciberataques/",
+          "type": "press",
+          "date": "2026-11-15",
+          "note": "La oleada afectó a estaciones, sedes policiales y espacios públicos."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-12-madrid-plaza-espana",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Madrid",
+      "place": "Plaza de España",
+      "lat": 40.423449,
+      "lon": -3.7108809,
+      "category": "other",
+      "datetime": "2026-11-12T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Una maleta abandonada en la plaza de España motivó la intervención de los TEDAX, que la detonaron de forma controlada. No se encontraron explosivos.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "La Región",
+        "url": "https://www.laregion.es/espana/falsas-amenazas-bomba-alarma-espana-mochilas-maletas-sospechosas_1_20261113-4492266.html",
+        "type": "press",
+        "date": "2026-11-11",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "La Región",
+          "url": "https://www.laregion.es/espana/falsas-amenazas-bomba-alarma-espana-mochilas-maletas-sospechosas_1_20261113-4492266.html",
+          "type": "press",
+          "date": "2026-11-11",
+          "note": ""
+        },
+        {
+          "name": "ESdiario — Avisos en Guadarrama y Madrid",
+          "url": "https://www.esdiario.com/nacional/261112/202726/avisos-bomba-guadarrama-espana-europa.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Detonación controlada de una maleta en la plaza de España; sin explosivos."
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Una de las intervenciones de la oleada en Madrid."
+        },
+        {
+          "name": "El Mundo — 30 avisos falsos en Madrid",
+          "url": "https://www.elmundo.es/espana/2026/11/13/6af6f56a21efa0e33c8b458e.html",
+          "type": "press",
+          "date": "2026-11-13",
+          "note": "30 avisos falsos en Madrid en día y medio."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-06-madrid-barajas",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Madrid",
+      "place": "Aeropuerto Adolfo Suárez Madrid-Barajas",
+      "lat": 40.4952269,
+      "lon": -3.5733733,
+      "category": "airport",
+      "datetime": "2026-11-06T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Cuatro vuelos con destino a Barajas, tres desde Londres y uno desde Múnich, recibieron amenazas de explosivos. Aena activó el protocolo y constituyó un comité de seguridad; tras las comprobaciones, las amenazas quedaron descartadas. La víspera se registraron otros cuatro avisos similares.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Aena — comunicado citado por RTVE",
+        "url": "https://www.rtve.es/noticias/20261106/nueva-ola-amenazas-bomba-aviones-europa/17302942.shtml",
+        "type": "official_statement",
+        "date": "2026-11-05",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Aena — comunicado citado por RTVE",
+          "url": "https://www.rtve.es/noticias/20261106/nueva-ola-amenazas-bomba-aviones-europa/17302942.shtml",
+          "type": "official_statement",
+          "date": "2026-11-05",
+          "note": ""
+        },
+        {
+          "name": "France24 — Nueva ola de falsas amenazas",
+          "url": "https://www.france24.com/es/minuto-a-minuto/20261106-una-nueva-ola-de-falsas-amenazas-de-bomba-inquieta-a-europa",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Cuatro vuelos con destino Madrid entre las alertas del 6 de noviembre."
+        },
+        {
+          "name": "El Independiente — Inteligencia europea",
+          "url": "https://www.elindependiente.com/espana/2026/11/15/servicios-inteligencia-europeos-investigan-quien-esta-detras-de-amenazas-de-bomba-y-ciberataques/",
+          "type": "press",
+          "date": "2026-11-15",
+          "note": "30 vuelos afectados en Europa y cautela institucional sobre la autoría."
+        },
+        {
+          "name": "El Español — Más de 40 amenazas en aeropuertos",
+          "url": "https://www.elespanol.com/observatorio-defensa/20261106/decenas-falsas-amenazas-bomba-sacuden-aeropuertos-europa-avivan-sospecha-sabotaje-hibrido/1003744447843_0.html",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Más de 40 alertas y sospecha de sabotaje híbrido."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-03-murcia-airport",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Murcia",
+      "place": "Aeropuerto Internacional de la Región de Murcia",
+      "lat": 37.805602,
+      "lon": -1.1273468,
+      "category": "airport",
+      "datetime": "2026-11-03T10:30:00+01:00",
+      "time_precision": "approximate",
+      "status": "hoax",
+      "summary": "Un aviso de bomba en un vuelo de Ryanair procedente de Mánchester obligó a activar el protocolo en el aeropuerto de Murcia. El avión aterrizó, los 114 pasajeros y 7 tripulantes fueron controlados y la Guardia Civil descartó la presencia de explosivos.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Delegado del Gobierno en Murcia — declaraciones a Expansión",
+        "url": "https://www.expansion.com/sociedad/2026/11/03/activado-protocolo-seguridad-aeropuerto-murcia-aviso-bomba-avion.html",
+        "type": "official_statement",
+        "date": "2026-11-03",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Delegado del Gobierno en Murcia — declaraciones a Expansión",
+          "url": "https://www.expansion.com/sociedad/2026/11/03/activado-protocolo-seguridad-aeropuerto-murcia-aviso-bomba-avion.html",
+          "type": "official_statement",
+          "date": "2026-11-03",
+          "note": ""
+        },
+        {
+          "name": "RTVE — Oleada de falsas amenazas en vuelos europeos",
+          "url": "https://www.rtve.es/noticias/20261105/alertas-bomba-vuelos-europeos/17300954.shtml",
+          "type": "press",
+          "date": "2026-11-05",
+          "note": "27 aviones afectados en Europa; todas las amenazas resultaron falsas."
+        },
+        {
+          "name": "El Español — Más de 40 amenazas en aeropuertos",
+          "url": "https://www.elespanol.com/observatorio-defensa/20261106/decenas-falsas-amenazas-bomba-sacuden-aeropuertos-europa-avivan-sospecha-sabotaje-hibrido/1003744447843_0.html",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Siete alertas el 3 de noviembre, entre ellas la del aeropuerto de Murcia."
+        },
+        {
+          "name": "El Independiente — Inteligencia europea",
+          "url": "https://www.elindependiente.com/espana/2026/11/15/servicios-inteligencia-europeos-investigan-quien-esta-detras-de-amenazas-de-bomba-y-ciberataques/",
+          "type": "press",
+          "date": "2026-11-15",
+          "note": "30 vuelos bajo amenaza en Europa y posible guerra híbrida."
+        }
+      ]
+    },
+    {
+      "id": "pl-2026-11-05-warsaw-chopin-lot",
+      "country": "PL",
+      "country_name": "Polonia",
+      "locality": "Varsovia",
+      "place": "Aeropuerto Chopin de Varsovia",
+      "lat": 52.1657,
+      "lon": 20.9671,
+      "category": "airport",
+      "datetime": "2026-11-05T00:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Un vuelo de LOT con destino a París fue detenido durante el carreteo tras recibir un aviso sobre un posible objeto peligroso. Se cerró temporalmente una pista; la inspección del avión y del equipaje no encontró amenaza y el aeropuerto mantuvo su operativa.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Business Insider Polska",
+        "url": "https://businessinsider.com.pl/wiadomosci/lot-do-warszawy-przekierowany-po-falszywym-alarmie/ybmjkez",
+        "type": "press",
+        "date": "2026-11-04",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Business Insider Polska",
+          "url": "https://businessinsider.com.pl/wiadomosci/lot-do-warszawy-przekierowany-po-falszywym-alarmie/ybmjkez",
+          "type": "press",
+          "date": "2026-11-04",
+          "note": ""
+        },
+        {
+          "name": "France24 — Nueva ola de falsas amenazas",
+          "url": "https://www.france24.com/es/minuto-a-minuto/20261106-una-nueva-ola-de-falsas-amenazas-de-bomba-inquieta-a-europa",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Oleada europea de falsas amenazas con vuelos a Varsovia."
+        },
+        {
+          "name": "Reuters — Amenazas a medios y vuelos",
+          "url": "https://www.reuters.com/business/aerospace-defense/danish-police-investigate-renewed-threats-copenhagen-airport-2026-11-06",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Correos firmados por un supuesto \"Mikhail Andropov\" tras la oleada de amenazas."
+        }
+      ]
+    },
+    {
+      "id": "pl-2026-11-03-warsaw-modlin",
+      "country": "PL",
+      "country_name": "Polonia",
+      "locality": "Nowy Dwór Mazowiecki",
+      "place": "Aeropuerto de Varsovia-Modlin",
+      "lat": 52.4508857,
+      "lon": 20.6489881,
+      "category": "airport",
+      "datetime": "2026-11-03T09:54:00+01:00",
+      "time_precision": "exact",
+      "status": "hoax",
+      "summary": "Un Boeing 737 MAX de LOT procedente de Londres-Heathrow fue desviado a Modlin tras una alerta de bomba. El aeropuerto se cerró temporalmente y se evacuó a 181 personas; los servicios de seguridad no encontraron ningún artefacto y la alerta se canceló a las 12:21.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Aeropuerto de Varsovia-Modlin — Comunicado",
+        "url": "https://modlinairport.pl/aktualnosc/odwolanie-alarmu-bombowego-i-przywrocenie-normalnego-funkcjonowania-lotniska-komunikat-nr",
+        "type": "official",
+        "date": "2026-11-03",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Aeropuerto de Varsovia-Modlin — Comunicado",
+          "url": "https://modlinairport.pl/aktualnosc/odwolanie-alarmu-bombowego-i-przywrocenie-normalnego-funkcjonowania-lotniska-komunikat-nr",
+          "type": "official",
+          "date": "2026-11-03",
+          "note": ""
+        },
+        {
+          "name": "France24 — Nueva ola de falsas amenazas",
+          "url": "https://www.france24.com/es/minuto-a-minuto/20261106-una-nueva-ola-de-falsas-amenazas-de-bomba-inquieta-a-europa",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Oleada europea de falsas amenazas con vuelos a Varsovia."
+        },
+        {
+          "name": "RTVE — Oleada de falsas amenazas en vuelos europeos",
+          "url": "https://www.rtve.es/noticias/20261105/alertas-bomba-vuelos-europeos/17300954.shtml",
+          "type": "press",
+          "date": "2026-11-05",
+          "note": "27 aviones afectados en Europa; alertas falsas."
+        }
+      ]
+    },
+    {
+      "id": "pl-2026-11-03-warsaw-chopin-sas",
+      "country": "PL",
+      "country_name": "Polonia",
+      "locality": "Varsovia",
+      "place": "Aeropuerto Chopin de Varsovia",
+      "lat": 52.1657,
+      "lon": 20.9671,
+      "category": "airport",
+      "datetime": "2026-11-03T09:28:00+01:00",
+      "time_precision": "approximate",
+      "status": "hoax",
+      "summary": "Un vuelo de SAS procedente de Copenhague recibió una amenaza de bomba y, tras aterrizar, fue inspeccionado. Se cerró una pista durante las comprobaciones; no se encontraron explosivos y el aeropuerto recuperó la normalidad.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Aeropuerto Chopin — declaraciones a PAP",
+        "url": "https://www.pap.pl/en/news/two-warsaw-airports-resume-standard-operations-after-bomb-threats",
+        "type": "official_statement",
+        "date": "2026-11-03",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Aeropuerto Chopin — declaraciones a PAP",
+          "url": "https://www.pap.pl/en/news/two-warsaw-airports-resume-standard-operations-after-bomb-threats",
+          "type": "official_statement",
+          "date": "2026-11-03",
+          "note": ""
+        },
+        {
+          "name": "France24 — Nueva ola de falsas amenazas",
+          "url": "https://www.france24.com/es/minuto-a-minuto/20261106-una-nueva-ola-de-falsas-amenazas-de-bomba-inquieta-a-europa",
+          "type": "press",
+          "date": "2026-11-06",
+          "note": "Oleada europea de falsas amenazas con vuelos a Varsovia."
+        },
+        {
+          "name": "RTVE — Oleada de falsas amenazas en vuelos europeos",
+          "url": "https://www.rtve.es/noticias/20261105/alertas-bomba-vuelos-europeos/17300954.shtml",
+          "type": "press",
+          "date": "2026-11-05",
+          "note": "27 aviones afectados en Europa; alertas falsas."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-10-zaragoza-actur",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Zaragoza",
+      "place": "Calle Mariana Pineda, barrio del Actur",
+      "lat": 41.6715,
+      "lon": -0.8874,
+      "category": "other",
+      "datetime": "2026-11-10T12:00:00+01:00",
+      "time_precision": "day",
+      "status": "hoax",
+      "summary": "Dos mochilas abandonadas junto a una motocicleta en la calle Mariana Pineda obligaron a acordonar la zona y movilizar a los TEDAX. Los agentes inspeccionaron los objetos y descartaron que contuvieran explosivos.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Aragón Digital",
+        "url": "https://www.aragondigital.es/articulo/sucesos/zaragoza-encadena-tres-avisos-bomba-tragedia-oviedo-oleada-falsas-alarmas-que-extiende-toda-espana/202611132030521021855.html",
+        "type": "press",
+        "date": "2026-11-10",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Aragón Digital",
+          "url": "https://www.aragondigital.es/articulo/sucesos/zaragoza-encadena-tres-avisos-bomba-tragedia-oviedo-oleada-falsas-alarmas-que-extiende-toda-espana/202611132030521021855.html",
+          "type": "press",
+          "date": "2026-11-10",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-12-zaragoza-delicias",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Zaragoza",
+      "place": "Estación de Zaragoza-Delicias",
+      "lat": 41.6586,
+      "lon": -0.9116,
+      "category": "train",
+      "datetime": "2026-11-12T14:00:00+01:00",
+      "time_precision": "approximate",
+      "status": "hoax",
+      "summary": "Una llamada anónima alertó de una mochila sospechosa en la estación de Delicias. Se restringieron los accesos y un tren procedente de Madrid se detuvo en Calatayud mientras se comprobaba el objeto, que no contenía explosivos. El 16 de noviembre la Policía Nacional detuvo en Tudela a un hombre que, según la investigación, hizo la llamada porque llegaba tarde a su tren.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "ElDiario.es — Aragón",
+        "url": "https://www.eldiario.es/aragon/sociedad/detenido-hombre-invento-amenaza-bomba-estacion-zaragoza-llegaba-tarde-tren_1_13667565.html",
+        "type": "press",
+        "date": "2026-11-12",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "ElDiario.es — Aragón",
+          "url": "https://www.eldiario.es/aragon/sociedad/detenido-hombre-invento-amenaza-bomba-estacion-zaragoza-llegaba-tarde-tren_1_13667565.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": ""
+        },
+        {
+          "name": "Policía Nacional — comunicado citado por Diario Vasco",
+          "url": "https://www.diariovasco.com/sociedad/detenido-navarra-simular-amenaza-bomba-perder-ave-20261116160346-nt.html",
+          "type": "official_statement",
+          "date": "2026-11-16",
+          "note": "Detención en Tudela, motivación del aviso y recomendaciones ante objetos sospechosos."
+        },
+        {
+          "name": "Diario de Navarra",
+          "url": "https://www.diariodenavarra.es/noticias/navarra/tudela-ribera/2026/11/16/detenido-navarra-falso-aviso-bomba-hizo-desalojar-ave-zaragoza-llegaba-tarde-coger-tren-842652-22.html",
+          "type": "press",
+          "date": "2026-11-16",
+          "note": "El detenido describió a un supuesto sospechoso inexistente."
+        },
+        {
+          "name": "Aragón Digital",
+          "url": "https://www.aragondigital.es/articulo/sucesos/zaragoza-encadena-tres-avisos-bomba-tragedia-oviedo-oleada-falsas-alarmas-que-extiende-toda-espana/202611132030521021855.html",
+          "type": "press",
+          "date": "2026-11-13",
+          "note": "La estación de Delicias fue una de las tres alertas de la semana."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-13-zaragoza-psoe",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Zaragoza",
+      "place": "Sede del PSOE de Aragón, calle Conde de Aranda",
+      "lat": 41.65,
+      "lon": -0.883,
+      "category": "other",
+      "datetime": "2026-11-13T13:50:00+01:00",
+      "time_precision": "exact",
+      "status": "hoax",
+      "summary": "Una maleta sospechosa junto a la sede del PSOE de Aragón motivó un perímetro de 200 metros, el desalojo de la zona y la intervención de TEDAX, Subsuelo y UIP. Un robot manipuló el objeto y los especialistas lo detonaron de forma controlada; la maleta estaba vacía. La Policía revisó cámaras para identificar a quien la dejó.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "Aragón Digital",
+        "url": "https://www.aragondigital.es/articulo/sucesos/zaragoza-encadena-tres-avisos-bomba-tragedia-oviedo-oleada-falsas-alarmas-que-extiende-toda-espana/202611132030521021855.html",
+        "type": "press",
+        "date": "2026-11-13",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "Aragón Digital",
+          "url": "https://www.aragondigital.es/articulo/sucesos/zaragoza-encadena-tres-avisos-bomba-tragedia-oviedo-oleada-falsas-alarmas-que-extiende-toda-espana/202611132030521021855.html",
+          "type": "press",
+          "date": "2026-11-13",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-10-madrid-dggc",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Madrid",
+      "place": "Dirección General de la Guardia Civil, calle Guzmán el Bueno",
+      "lat": 40.4428,
+      "lon": -3.7142,
+      "category": "police",
+      "datetime": "2026-11-10T22:00:00+01:00",
+      "time_precision": "approximate",
+      "status": "hoax",
+      "summary": "Un hombre y tres mujeres dejaron una maleta entre unos arbustos junto a una de las puertas de la Dirección General de la Guardia Civil. Un vecino alertó y los agentes revisaron las cámaras; la maleta estaba vacía y no contenía explosivos. Los sospechosos no fueron identificados.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "El Español — Investigación de la Guardia Civil",
+        "url": "https://www.elespanol.com/espana/20261112/guardia-civil-investiga-oleada-falsos-avisos-bomba-espana-infraestructuras-transportes/1003744455004_0.html",
+        "type": "press",
+        "date": "2026-11-10",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "El Español — Investigación de la Guardia Civil",
+          "url": "https://www.elespanol.com/espana/20261112/guardia-civil-investiga-oleada-falsos-avisos-bomba-espana-infraestructuras-transportes/1003744455004_0.html",
+          "type": "press",
+          "date": "2026-11-10",
+          "note": ""
+        },
+        {
+          "name": "El Independiente — Inteligencia europea",
+          "url": "https://www.elindependiente.com/espana/2026/11/15/servicios-inteligencia-europeos-investigan-quien-esta-detras-de-amenazas-de-bomba-y-ciberataques/",
+          "type": "press",
+          "date": "2026-11-15",
+          "note": "Dos avisos en la sede de Guzmán el Bueno; sin explosivos."
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Oleada de avisos en Madrid y otras ciudades."
+        }
+      ]
+    },
+    {
+      "id": "es-2026-11-11-guadarrama-gasolinera",
+      "country": "ES",
+      "country_name": "España",
+      "locality": "Guadarrama",
+      "place": "Gasolinera y supermercados de la calle de los Escoriales",
+      "lat": 40.6729,
+      "lon": -4.0891,
+      "category": "shopping",
+      "datetime": "2026-11-11T16:00:00+01:00",
+      "time_precision": "approximate",
+      "status": "hoax",
+      "summary": "Una mochila de la que sobresalía un cable apareció junto a una gasolinera y varios supermercados. La Guardia Civil acordonó la zona, desalojó los establecimientos y realizó una detonación controlada; las comprobaciones descartaron explosivos. Por la tarde apareció un segundo objeto sospechoso en la calle Dehesa de los Panes, también sin peligro.",
+      "verified": true,
+      "demo": false,
+      "source": {
+        "name": "ESdiario — Avisos en Guadarrama",
+        "url": "https://www.esdiario.com/nacional/261112/202726/avisos-bomba-guadarrama-espana-europa.html",
+        "type": "press",
+        "date": "2026-11-11",
+        "note": ""
+      },
+      "sources": [
+        {
+          "name": "ESdiario — Avisos en Guadarrama",
+          "url": "https://www.esdiario.com/nacional/261112/202726/avisos-bomba-guadarrama-espana-europa.html",
+          "type": "press",
+          "date": "2026-11-11",
+          "note": ""
+        },
+        {
+          "name": "El Español — Investigación de la Guardia Civil",
+          "url": "https://www.elespanol.com/espana/20261112/guardia-civil-investiga-oleada-falsos-avisos-bomba-espana-infraestructuras-transportes/1003744455004_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "La Guardia Civil investiga si buscan generar caos o medir tiempos de reacción."
+        },
+        {
+          "name": "20minutos — Oleada de falsos avisos en España",
+          "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+          "type": "press",
+          "date": "2026-11-12",
+          "note": "Avisos similares en Galapagar, Arganda y otras localidades."
+        }
+      ]
     }
   ]
 }

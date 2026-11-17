@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "title": "Perfil provisional de la oleada de avisos",
+    "updated_at": "2026-11-17T12:00:00+01:00",
+    "period": "2026-01-08 a 2026-11-16",
+    "scope": "36 avisos registrados en 12 países: 34 resueltos (31 falsos o descartados y 3 reales) y 2 pendientes.",
+    "disclaimer": "Análisis editorial y provisional elaborado con fuentes abiertas. No sustituye a la investigación policial ni atribuye delitos a personas concretas. Los porcentajes se calculan sobre avisos resueltos del conjunto completo y pueden variar al actualizar el mapa.",
+    "privacy": "No se incluyen nombres, alias ni datos identificativos de detenidos o sospechosos.",
+    "methodology": "Se cruzan notas policiales, comunicados oficiales y prensa. Cada aviso se clasifica como falso, descartado, real o pendiente según el resultado publicado por la fuente."
+  },
+  "headline": "El patrón dominante es la falsa alarma: 31 de los 34 avisos resueltos (91 %) se descartaron o se declararon falsos. Los tres casos reales —Oviedo, Tallaght y Atenas— no muestran indicios de compartir autor ni modus operandi.",
+  "false_alarm_profile": {
+    "summary": "No hay un único perfil criminal que explique toda la oleada. La mayoría de los avisos son amenazas anónimas, con bajo coste técnico y alto impacto mediático, que imitan un mismo repertorio: correos o llamadas, objetos abandonados y objetivos simbólicos. Junto a una posible campaña coordinada conviven imitadores, oportunistas y personas que usan la amenaza para resolver un problema personal, como no perder un tren. La investigación trabaja con varias hipótesis en paralelo y no ha atribuido oficialmente la oleada a un Estado o grupo concreto.",
+    "patterns": [
+      {
+        "title": "Canales digitales y bajo coste",
+        "text": "Llamadas VoIP, correos electrónicos y mensajes anónimos permiten lanzar una amenaza desde cualquier lugar con pocos recursos. En varios casos se usaron identidades usurpadas y programas de voz sintética."
+      },
+      {
+        "title": "Objetivos simbólicos y alta visibilidad",
+        "text": "Aeropuertos, estaciones, sedes policiales, colegios y grandes superficies concentran buena parte de los avisos. Son lugares con protocolos de evacuación conocidos y un coste económico y mediático inmediato."
+      },
+      {
+        "title": "Plantillas y firmas cambiantes",
+        "text": "Los mensajes repiten estructuras y amenazas genéricas, pero cambian de firma. Algunos correos se atribuyen a seudónimos como 'Mikhail Andropov' o 'Combatientes del Estado Masculino', sin que se haya confirmado su autoría."
+      },
+      {
+        "title": "Imitación y efecto contagio",
+        "text": "Tras un caso de gran repercusión aparecen avisos similares en otras ciudades. La ola de avisos en España se intensificó tras la difusión del caso de Oviedo y con una alta presencia del tema en medios y redes."
+      },
+      {
+        "title": "Oportunismo personal",
+        "text": "Algunos avisos no buscan un impacto político: se han documentado casos de personas que alertaron de una bomba para no perder un vuelo o un tren, o para retrasar un trayecto."
+      }
+    ],
+    "hypotheses": [
+      {
+        "title": "Campaña híbrida coordinada",
+        "text": "Servicios de inteligencia europeos investigan si una parte de la oleada forma parte de una campaña de desestabilización o guerra híbrida, por la coincidencia temporal, la variedad de países y el uso de infraestructuras digitales. No hay atribución oficial ni pruebas públicas que permitan confirmarlo.",
+        "confidence": "indicios"
+      },
+      {
+        "title": "Imitadores y oportunistas (casos documentados)",
+        "text": "Es la hipótesis con más apoyo documental para casos concretos: personas sin relación con una campaña organizada que reproducen el guion para generar caos, buscar notoriedad o resolver un problema personal. La detención de Tudela y la de dos jóvenes por amenazas a aeropuertos encajan en este patrón.",
+        "confidence": "confirmado"
+      },
+      {
+        "title": "Ciberdelincuencia y usurpación de identidad",
+        "text": "El uso de VoIP, correos efímeros, identidades robadas y voz generada por IA apunta a actores con conocimientos técnicos básicos o intermedios. Puede tratarse de delincuencia común, activismo o servicios contratados, sin que exista una única organización identificada.",
+        "confidence": "indicios"
+      },
+      {
+        "title": "Autor solitario o grupo local",
+        "text": "Algunos avisos pueden ser obra de una sola persona o de un grupo reducido con motivaciones locales. Es una hipótesis abierta para los casos sin reivindicación ni conexión digital demostrada.",
+        "confidence": "hipotesis"
+      }
+    ],
+    "indicators": [
+      "Reutilización de plantillas, asuntos o firmas en correos y llamadas de distintos países.",
+      "Uso de VoIP, números virtuales, correos desechables, identidades usurpadas o voz sintética.",
+      "Objetivos con alto coste de evacuación: aeropuertos, estaciones, sedes institucionales y colegios.",
+      "Concentración en franjas de máxima audiencia o coincidiendo con noticias de seguridad.",
+      "Coincidencia con ciberataques, filtraciones o campañas de desinformación en los mismos días.",
+      "Incoherencias entre la amenaza y la capacidad técnica demostrada por quien la envía."
+    ],
+    "known_cases": [
+      {
+        "date": "2026-11-16",
+        "place": "Tudela (Navarra) / Zaragoza-Delicias",
+        "profile": "Hombre adulto; motivación personal",
+        "method": "Llamada anónima desde un teléfono",
+        "motive": "Llegaba tarde y quería retrasar el tren",
+        "outcome": "Detenido; falsa alarma",
+        "source": "https://www.diariodenavarra.es/noticias/navarra/tudela-ribera/2026/11/16/detenido-navarra-falso-aviso-bomba-hizo-desalojar-ave-zaragoza-llegaba-tarde-coger-tren-842652-22.html"
+      },
+      {
+        "date": "2026-10-16",
+        "place": "Málaga y Murcia",
+        "profile": "Dos jóvenes, uno en cada provincia",
+        "method": "VoIP, identidad usurpada y voz generada por IA",
+        "motive": "Presunta extorsión y desórdenes públicos",
+        "outcome": "Detenidos; falsas amenazas",
+        "source": "https://es.euronews.com/2026/10/16/detenidos-malaga-murcia-amenazas-bomba-aeropuertos-inteligencia-artificial"
+      }
+    ],
+    "known_cases_note": "Solo se incluyen casos con detención o autor identificado. Se omiten nombres y datos personales. La existencia de imitadores no explica por sí sola la escala europea de la oleada."
+  },
+  "real_attack_profile": {
+    "title": "Los casos reales: Oviedo, Tallaght y Atenas",
+    "summary": "Frente a la oleada de falsas alarmas, el periodo registra tres casos con explosivos reales confirmados. El más grave es el ataque de Villafría (Oviedo), con un artefacto real que causó la muerte de un policía y de su perro, y heridas graves a un TEDAX. Los otros dos casos —tubos bomba en Tallaght y granadas en la sede de la Policía de Ática— tienen perfiles y motivaciones distintas. No hay pruebas públicas de que compartan autoría con la oleada de avisos.",
+    "facts": [
+      "Oviedo, 10 de noviembre de 2026: un tiroteo previo por un conflicto vecinal y la explosión de una mochila con un artefacto real en un edificio de Villafría.",
+      "El subinspector de la Policía Nacional Juan José Rodríguez, de 65 años, y su perro policía fallecieron; un especialista de los TEDAX resultó herido grave.",
+      "El sospechoso es un hombre de unos 60-65 años con antecedentes por delincuencia común, identificado y fugitivo; la Policía mantiene controles y un dispositivo de búsqueda.",
+      "Tallaght (Dublín), 19 de octubre de 2026: dos tubos bomba viables hallados en un registro; cuatro detenidos y evacuación del complejo.",
+      "Atenas, 6 de marzo de 2026: un hombre de 48 años se presentó en la sede de la Policía de Ática diciendo que llevaba explosivos; se le intervinieron dos granadas defensivas."
+    ],
+    "differences": [
+      "Los casos reales implican artefactos verificados, no maletas vacías, cables o mochilas sin carga.",
+      "Las informaciones publicadas sitúan el ataque de Oviedo en un contexto de conflicto interpersonal y confrontación directa, no en una campaña de amenazas masivas.",
+      "Los casos reales tienen autores identificados o detenidos, mientras que la mayoría de los avisos falsos son anónimos y no se resuelven.",
+      "Muchas falsas alarmas buscan evacuación y repercusión mediática; los casos reales buscan dañar o matar.",
+      "No hay reivindicación pública que conecte el caso de Oviedo con las firmas o seudónimos de la oleada europea.",
+      "La investigación de Oviedo se centra en el entorno del sospechoso y en pruebas forenses; la de la oleada, en telecomunicaciones y huellas digitales."
+    ],
+    "warning": "No debe confundirse el caso de Oviedo con las falsas alarmas. Atribuir ambos fenómenos al mismo autor es una hipótesis no confirmada y, por ahora, contraria a la evidencia disponible. Cualquier persona es inocente hasta que se demuestre lo contrario."
+  },
+  "sources": [
+    {
+      "name": "Gobierno del Principado de Asturias — Villafría",
+      "url": "https://actualidad.asturias.es/-/villafria11",
+      "type": "official",
+      "date": "2026-11-10",
+      "note": "Parte oficial sobre el fallecimiento del agente y el estado del especialista TEDAX."
+    },
+    {
+      "name": "El País — Búsqueda del sospechoso",
+      "url": "https://elpais.com/espana/2026-11-11/pistas-falsas-y-controles-en-carreteras-continua-la-busqueda-del-fugitivo-responsable-del-explosivo-que-mato-a-un-policia-en-oviedo.html",
+      "type": "press",
+      "date": "2026-11-11",
+      "note": "Dispositivo de búsqueda, controles en carreteras y perfil del sospechoso."
+    },
+    {
+      "name": "RTVE — Un policía muerto y otro herido grave en Oviedo",
+      "url": "https://www.rtve.es/noticias/20261110/policia-muerto-otro-herido-grave-explosion-oviedo/17307427.shtml",
+      "type": "press",
+      "date": "2026-11-10",
+      "note": "Primeras informaciones sobre las víctimas y el artefacto."
+    },
+    {
+      "name": "El Confidencial — Cronología de la investigación",
+      "url": "https://www.elconfidencial.com/espana/2026-11-12/tiroteo-explosion-oviedo-policia-herido-directo_4463118/",
+      "type": "press",
+      "date": "2026-11-13",
+      "note": "Cronología del tiroteo, la explosión y la fuga del sospechoso."
+    },
+    {
+      "name": "elDiario.es — Aviso de la Policía asturiana",
+      "url": "https://www.eldiario.es/asturias/policia-asturiana-alerta-consecuencias-penales-proliferacion-falsas-alarmas-artefactos-explosivos_1_13662816.html",
+      "type": "press",
+      "date": "2026-11-13",
+      "note": "Consecuencias penales de las falsas alarmas y efecto psicosis."
+    },
+    {
+      "name": "ElDiario.es — Detenido por el aviso en Zaragoza-Delicias",
+      "url": "https://www.eldiario.es/aragon/sociedad/detenido-hombre-invento-amenaza-bomba-estacion-zaragoza-llegaba-tarde-tren_1_13667565.html",
+      "type": "press",
+      "date": "2026-11-16",
+      "note": "Detención en Tudela y motivación del falso aviso."
+    },
+    {
+      "name": "Diario de Navarra — Detenido en Tudela",
+      "url": "https://www.diariodenavarra.es/noticias/navarra/tudela-ribera/2026/11/16/detenido-navarra-falso-aviso-bomba-hizo-desalojar-ave-zaragoza-llegaba-tarde-coger-tren-842652-22.html",
+      "type": "press",
+      "date": "2026-11-16",
+      "note": "El detenido describió a un supuesto sospechoso inexistente."
+    },
+    {
+      "name": "Diario Vasco — Comunicado de la Policía Nacional",
+      "url": "https://www.diariovasco.com/sociedad/detenido-navarra-simular-amenaza-bomba-perder-ave-20261116160346-nt.html",
+      "type": "official_statement",
+      "date": "2026-11-16",
+      "note": "Detención y recomendaciones policiales ante objetos sospechosos."
+    },
+    {
+      "name": "Ministerio del Interior — Dos jóvenes detenidos por falsas amenazas",
+      "url": "https://www.interior.gob.es/opencms/es/detalle/articulo/La-Policia-Nacional-detiene-a-dos-jovenes-por-realizar-falsas-amenazas-de-bomba-contra-aeropuertos-espanoles",
+      "type": "official",
+      "date": "2026-10-16",
+      "note": "Uso de VoIP, identidad usurpada y voz generada por IA; operación Aviación."
+    },
+    {
+      "name": "Euronews — Detenidos dos jóvenes por falsas amenazas a aeropuertos",
+      "url": "https://es.euronews.com/2026/10/16/detenidos-malaga-murcia-amenazas-bomba-aeropuertos-inteligencia-artificial",
+      "type": "press",
+      "date": "2026-10-16",
+      "note": "Cobertura de la operación y de las técnicas de suplantación."
+    },
+    {
+      "name": "France24 — Ola de amenazas en Europa",
+      "url": "https://www.france24.com/es/minuto-a-minuto/20261106-una-nueva-ola-de-falsas-amenazas-de-bomba-inquieta-a-europa",
+      "type": "press",
+      "date": "2026-11-06",
+      "note": "Vuelos desviados y alertas en varios países europeos."
+    },
+    {
+      "name": "Reuters — Amenazas a medios y aerolíneas",
+      "url": "https://www.reuters.com/world/europe/european-newsrooms-receive-bomb-threats-day-after-flights-disrupted-2026-11-06/",
+      "type": "press",
+      "date": "2026-11-06",
+      "note": "Correos con amenazas y seudónimos tras la oleada de vuelos."
+    },
+    {
+      "name": "20minutos — Oleada de falsos avisos en España",
+      "url": "https://www.20minutos.es/nacional/policia-guardia-civil-investigan-una-ola-falsos-avisos-bomba-espana-critican-desmantelamiento-unidades-tedax_7060303_0.html",
+      "type": "press",
+      "date": "2026-11-12",
+      "note": "Casos en varias ciudades y críticas al desmantelamiento de unidades TEDAX."
+    },
+    {
+      "name": "El Independiente — Inteligencia europea",
+      "url": "https://www.elindependiente.com/espana/2026/11/15/servicios-inteligencia-europeos-investigan-quien-esta-detras-de-amenazas-de-bomba-y-ciberataques/",
+      "type": "press",
+      "date": "2026-11-15",
+      "note": "Investigación europea y posible guerra híbrida."
+    },
+    {
+      "name": "El Español — La Guardia Civil investiga la oleada",
+      "url": "https://www.elespanol.com/espana/20261112/guardia-civil-investiga-oleada-falsos-avisos-bomba-espana-infraestructuras-transportes/1003744455004_0.html",
+      "type": "press",
+      "date": "2026-11-12",
+      "note": "Objetivos, hipótesis y episodios en Madrid y Guadarrama."
+    },
+    {
+      "name": "El Español — Más de 40 amenazas en aeropuertos",
+      "url": "https://www.elespanol.com/observatorio-defensa/20261106/decenas-falsas-amenazas-bomba-sacuden-aeropuertos-europa-avivan-sospecha-sabotaje-hibrido/1003744447843_0.html",
+      "type": "press",
+      "date": "2026-11-06",
+      "note": "Más de 40 alertas y sospecha de sabotaje híbrido."
+    },
+    {
+      "name": "La Vanguardia — Amenazas híbridas",
+      "url": "https://www.lavanguardia.com/internacional/20261108/11678821/nueva-realidad-amenazas-hibridas.html",
+      "type": "press",
+      "date": "2026-11-08",
+      "note": "Contexto de la nueva realidad de amenazas híbridas."
+    },
+    {
+      "name": "RTVE — 27 aviones afectados en Europa",
+      "url": "https://www.rtve.es/noticias/20261105/alertas-bomba-vuelos-europeos/17300954.shtml",
+      "type": "press",
+      "date": "2026-11-05",
+      "note": "Balance de vuelos afectados y alertas falsas."
+    },
+    {
+      "name": "El Mundo — 30 avisos falsos en Madrid",
+      "url": "https://www.elmundo.es/espana/2026/11/13/6af6f56a21efa0e33c8b458e.html",
+      "type": "press",
+      "date": "2026-11-13",
+      "note": "30 avisos falsos en Madrid en día y medio."
+    },
+    {
+      "name": "ABC — Oleada de avisos en Andalucía",
+      "url": "https://www.abc.es/andalucia/interior-estudia-origen-oleada-avisos-bomba-andalucia-20261114002222-nt.html",
+      "type": "press",
+      "date": "2026-11-14",
+      "note": "El Interior estudia el origen de la oleada en Andalucía."
+    },
+    {
+      "name": "Aragón Digital — Tres avisos en cuatro días",
+      "url": "https://www.aragondigital.es/articulo/sucesos/zaragoza-encadena-tres-avisos-bomba-tragedia-oviedo-oleada-falsas-alarmas-que-extiende-toda-espana/202611132030521021855.html",
+      "type": "press",
+      "date": "2026-11-13",
+      "note": "Zaragoza: Actur, Delicias y sede del PSOE; detonaciones controladas."
+    },
+    {
+      "name": "Diario de Cádiz — Cuatro maletas en menos de 24 horas",
+      "url": "https://www.diariodecadiz.es/vivir_en_cadiz/maletas-sospechosas-abandonadas-cadiz-oleada-falsas-amenazas-afecta-espana_0_2008488344.html",
+      "type": "press",
+      "date": "2026-11-13",
+      "note": "Desalojo de Bahía Sur, tranvía y colegio; todos los objetos sin explosivos."
+    },
+    {
+      "name": "ESdiario — Avisos en Guadarrama y Madrid",
+      "url": "https://www.esdiario.com/nacional/261112/202726/avisos-bomba-guadarrama-espana-europa.html",
+      "type": "press",
+      "date": "2026-11-12",
+      "note": "Dos avisos en Guadarrama y detonación controlada junto a una gasolinera."
+    },
+    {
+      "name": "An Garda Síochána — Tallaght",
+      "url": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/october/19-10-2026-seizure-of-pipe-bombs-and-arrests-tallaght-dublin-24-19th-october-2026.html",
+      "type": "police",
+      "date": "2026-10-19",
+      "note": "Dos tubos bomba viables y cuatro detenidos."
+    },
+    {
+      "name": "RTVE — Nueva ola de amenazas de bomba en aviones de Europa",
+      "url": "https://www.rtve.es/noticias/20261106/nueva-ola-amenazas-bomba-aviones-europa/17302942.shtml",
+      "type": "press",
+      "date": "2026-11-06",
+      "note": "Cuatro vuelos con destino Madrid y 27 aviones afectados en Europa."
+    },
+    {
+      "name": "Expansión — Alerta en el aeropuerto de Murcia",
+      "url": "https://www.expansion.com/sociedad/2026/11/03/activado-protocolo-seguridad-aeropuerto-murcia-aviso-bomba-avion.html",
+      "type": "press",
+      "date": "2026-11-03",
+      "note": "Alerta por correo electrónico y desalojo parcial del aeropuerto."
+    }
+  ]
+}
